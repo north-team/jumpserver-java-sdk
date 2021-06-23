@@ -7,4 +7,6 @@ package com.jumpserver.sdk.v2.jumpserver.luna;
 public interface LunaService {
 
     String connectLunaUrl(String assetId);
+
+    String connectLunaUrl(String assetId, String systemUserId, String userId, String system);
 }

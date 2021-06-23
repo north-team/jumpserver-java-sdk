@@ -17,6 +17,7 @@ public final class ClientConstants {
     public static final String USERS = BASE_URL + "/users/users/";
     public static final String USERGROUPS = BASE_URL + "/users/groups/";
     public static final String USER_PASSWORD_RESET = BASE_URL + "/users/users/{id}/password/";
+    public static final String USER_CONNECTION_TOKEN = BASE_URL + "/users/connection-token/";
 
     // assets
     public static final String NODES = BASE_URL + "/assets/nodes/";
@@ -59,5 +60,6 @@ public final class ClientConstants {
 
     // luna
     public static final String LUNA_URL = "/luna/?login_to=";
+    public static final String LUNA_CONNECT_URL = "/luna/connect/?system={system}&token={token}";
 
 }
