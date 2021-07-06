@@ -24,9 +24,9 @@ public class JmsUserServiceTest extends CommonBeforeTest {
         UserGroup usergroup = new UserGroup();
         usergroup.setId(userGroupId);
         usergroup.setName("T组");
-        UserGroup userGroupBack = os.users().createUserGroup(usergroup);
-        System.out.println(userGroupBack.getId());
-        System.out.println(userGroupBack.getName());
+//        UserGroup userGroupBack = os.users().createUserGroup(usergroup);
+//        System.out.println(userGroupBack.getId());
+//        System.out.println(userGroupBack.getName());
     }
 
     @Test
@@ -35,9 +35,9 @@ public class JmsUserServiceTest extends CommonBeforeTest {
         UserGroup usergroup = new UserGroup();
         usergroup.setName("X组");
         usergroup.setId(userGroupId);
-        UserGroup userGroupBack = os.users().updateUserGroup(usergroup);
-        System.out.println(userGroupBack.getId());
-        System.out.println(userGroupBack.getName());
+//        UserGroup userGroupBack = os.users().updateUserGroup(usergroup);
+//        System.out.println(userGroupBack.getId());
+//        System.out.println(userGroupBack.getName());
     }
 
     @Test
@@ -122,8 +122,8 @@ public class JmsUserServiceTest extends CommonBeforeTest {
     @Test
     public void deleteUserGroups() {
         System.out.println("delete userGroup::::");
-        ActionResponse actionResponse = os.users().deleteUserGroup(userGroupId);
-        System.out.println(actionResponse);
+//        ActionResponse actionResponse = os.users().deleteUserGroup(userGroupId);
+//        System.out.println(actionResponse);
     }
 
     @Test

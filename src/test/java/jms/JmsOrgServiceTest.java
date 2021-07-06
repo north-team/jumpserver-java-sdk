@@ -19,8 +19,8 @@ public class JmsOrgServiceTest extends CommonBeforeTest{
     public void addOrg() {
         Org object = new Org();
         object.setName("X-Org");
-        Org objectBack = os.orgs().createOrg(object);
-        System.out.println(objectBack.getId());
+//        Org objectBack = os.orgs().createOrg(object);
+//        System.out.println(objectBack.getId());
     }
 
     @Test
@@ -34,9 +34,9 @@ public class JmsOrgServiceTest extends CommonBeforeTest{
         Org object = new Org();
         object.setId(orgId);
         object.setName("API");
-        Org objectBack = os.orgs().updateOrg(object);
-        System.out.println(objectBack.getId());
-        System.out.println(objectBack.getName());
+//        Org objectBack = os.orgs().updateOrg(object);
+//        System.out.println(objectBack.getId());
+//        System.out.println(objectBack.getName());
     }
 
     @Test
@@ -79,8 +79,8 @@ public class JmsOrgServiceTest extends CommonBeforeTest{
         OrgUsers object = new OrgUsers();
         object.setOrgId(orgIdTest);
         object.setUser(userId);
-        OrgUsers objectBack = os.orgs().createOrgAdmins(object);
-        System.out.println(objectBack.getUser());
+//        OrgUsers objectBack = os.orgs().createOrgAdmins(object);
+//        System.out.println(objectBack.getUser());
     }
 
     @Test
@@ -93,14 +93,14 @@ public class JmsOrgServiceTest extends CommonBeforeTest{
 
     @Test
     public void deleteOrgAdmins() {
-        ActionResponse actionResponse = os.orgs().deleteOrgAdmins(orgIdTest, userId);
-        System.out.println(actionResponse.toString());
+//        ActionResponse actionResponse = os.orgs().deleteOrgAdmins(orgIdTest, userId);
+//        System.out.println(actionResponse.toString());
     }
 
     @Test
     public void deleteOrg() {
-        ActionResponse delete = os.orgs().deleteOrg(orgId);
-        System.out.println(delete);
+//        ActionResponse delete = os.orgs().deleteOrg(orgId);
+//        System.out.println(delete);
     }
 
 

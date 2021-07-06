@@ -67,7 +67,7 @@ public class UserServiceImpl extends BaseJmsService implements UserService {
         return get(UserGroup.class, uri(ClientConstants.USERGROUPS)).executeList();
     }
 
-    @Override
+    /*@Override
     public UserGroup createUserGroup(UserGroup usergroup) {
         checkNotNull(usergroup);
         return post(UserGroup.class, uri(ClientConstants.USERGROUPS))
@@ -87,6 +87,6 @@ public class UserServiceImpl extends BaseJmsService implements UserService {
         return patch(UserGroup.class, uri(ClientConstants.USERGROUPS), usergroup.getId(), "/")
                 .json(JSON.toJSONString(usergroup))
                 .execute();
-    }
+    }*/
 
 }

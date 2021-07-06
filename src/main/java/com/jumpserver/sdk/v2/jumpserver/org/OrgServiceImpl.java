@@ -24,7 +24,7 @@ public class OrgServiceImpl extends BaseJmsService implements OrgService {
         return get(Org.class, ClientConstants.ORG, orgId, "/").execute();
     }
 
-    @Override
+    /*@Override
     public ActionResponse deleteOrg(String orgId) {
         checkNotNull(orgId);
         return deleteWithResponse(ClientConstants.ORG, orgId, "/").execute();
@@ -43,7 +43,7 @@ public class OrgServiceImpl extends BaseJmsService implements OrgService {
                 .json(JSON.toJSONString(org))
                 .execute();
     }
-
+*/
     @Override
     public List<OrgUsers> getOrgUsers(String orgId) {
         checkNotNull(orgId);
@@ -72,7 +72,7 @@ public class OrgServiceImpl extends BaseJmsService implements OrgService {
         return get(OrgUsers.class, url).executeList();
     }
 
-    @Override
+    /*@Override
     public OrgUsers createOrgAdmins(OrgUsers orgusers) {
         checkNotNull(orgusers);
         String url = ClientConstants.ORGADMINS.replace("{org_id}", orgusers.getOrgId());
@@ -84,6 +84,6 @@ public class OrgServiceImpl extends BaseJmsService implements OrgService {
         checkNotNull(userId);
         String url = ClientConstants.ORGADMINS.replace("{org_id}", orgId);
         return deleteWithResponse(url, userId, "/").execute();
-    }
+    }*/
 
 }

@@ -24,10 +24,10 @@ public interface UserService {
 
     List<UserGroup> userGroups();
 
-    UserGroup updateUserGroup(UserGroup usergroup);
+//    UserGroup updateUserGroup(UserGroup usergroup);
 
-    UserGroup createUserGroup(UserGroup usergroup);
+//    UserGroup createUserGroup(UserGroup usergroup);
 
-    ActionResponse deleteUserGroup(String groupId);
+//    ActionResponse deleteUserGroup(String groupId);
 
 }

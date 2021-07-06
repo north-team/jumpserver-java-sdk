@@ -13,11 +13,11 @@ public interface OrgService {
 
     Org getOrg(String orgId);
 
-    Org updateOrg(Org org);
+//    Org updateOrg(Org org);
 
-    Org createOrg(Org org);
+//    Org createOrg(Org org);
 
-    ActionResponse deleteOrg(String orgId);
+//    ActionResponse deleteOrg(String orgId);
 
     List<OrgUsers> getOrgUsers(String orgId);
 
@@ -27,8 +27,8 @@ public interface OrgService {
 
     List<OrgUsers> getOrgAdmins(String orgId);
 
-    OrgUsers createOrgAdmins(OrgUsers orgusers);
+//    OrgUsers createOrgAdmins(OrgUsers orgusers);
 
-    ActionResponse deleteOrgAdmins(String orgId,String userId);
+//    ActionResponse deleteOrgAdmins(String orgId,String userId);
 
 }
