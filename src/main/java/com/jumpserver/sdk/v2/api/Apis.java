@@ -5,6 +5,7 @@ import com.jumpserver.sdk.v2.jumpserver.luna.LunaService;
 import com.jumpserver.sdk.v2.jumpserver.org.OrgService;
 import com.jumpserver.sdk.v2.jumpserver.permissions.PermissionService;
 import com.jumpserver.sdk.v2.jumpserver.users.UserService;
+import com.jumpserver.sdk.v2.jumpserver.xpack.CloudService;
 
 public class Apis {
 
@@ -28,6 +29,10 @@ public class Apis {
 
     public static LunaService getLunaServices() {
         return get(LunaService.class);
+    }
+
+    public static CloudService getCloudServices() {
+        return get(CloudService.class);
     }
 
     public static OrgService getOrgServices() {

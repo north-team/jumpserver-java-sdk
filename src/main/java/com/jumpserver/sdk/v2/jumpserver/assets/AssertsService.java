@@ -14,6 +14,8 @@ public interface AssertsService {
     //节点
     List<AssetsNode> listAssetsNode();
 
+    List<AssetsTreeNode> listAssetsNodeChildrenTree(String key);
+
     AssetsNode getAssetsNode(String nodeId);
 
     AssetsNode updateAssetsNode(AssetsNode node);

@@ -38,6 +38,7 @@ public final class ClientConstants {
     // nodes children
     public static final String NODES_ID_CHILDREN = BASE_URL + "/assets/nodes/{id}/children/";
     public static final String NODES_CHILDREN = BASE_URL + "/assets/nodes/children/";
+    public static final String NODES_CHILDREN_TREE = BASE_URL + "/assets/nodes/children/tree/";
     public static final String NODES_CHILDREN_ADD = BASE_URL + "/assets/nodes/{id}/children/add/";
     public static final String NODES_ASSETS_ADD = BASE_URL + "/assets/nodes/{id}/assets/add/";
     public static final String NODES_ASSETS_REMOVE = BASE_URL + "/assets/nodes/{id}/assets/remove/";
@@ -61,5 +62,9 @@ public final class ClientConstants {
     // luna
     public static final String LUNA_URL = "/luna/?login_to=";
     public static final String LUNA_CONNECT_URL = "/luna/connect/?system={system}&token={token}";
+
+    // XPack
+    public static final String SYNC_INSTANCE_TASKS = BASE_URL + "/xpack/cloud/sync-instance-tasks/";
+    public static final String SYNCED_CLOUD_INSTANCES = BASE_URL + "/xpack/cloud/sync-instance-tasks/{task_id}/instances/";
 
 }

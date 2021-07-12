@@ -11,6 +11,8 @@ import com.jumpserver.sdk.v2.jumpserver.permissions.PermissionService;
 import com.jumpserver.sdk.v2.jumpserver.permissions.PermissionServiceImpl;
 import com.jumpserver.sdk.v2.jumpserver.users.UserService;
 import com.jumpserver.sdk.v2.jumpserver.users.UserServiceImpl;
+import com.jumpserver.sdk.v2.jumpserver.xpack.CloudService;
+import com.jumpserver.sdk.v2.jumpserver.xpack.CloudServiceImpl;
 
 import java.util.Map;
 
@@ -26,6 +28,7 @@ public class DefaultAPIProvider implements APIProvider {
         bind(LunaService.class, LunaServiceImpl.class);
         bind(OrgService.class, OrgServiceImpl.class);
         bind(AssertsService.class, AssertsServiceImpl.class);
+        bind(CloudService.class, CloudServiceImpl.class);
     }
 
     @SuppressWarnings("unchecked")

@@ -5,6 +5,7 @@ import com.jumpserver.sdk.v2.jumpserver.luna.LunaService;
 import com.jumpserver.sdk.v2.jumpserver.org.OrgService;
 import com.jumpserver.sdk.v2.jumpserver.permissions.PermissionService;
 import com.jumpserver.sdk.v2.jumpserver.users.UserService;
+import com.jumpserver.sdk.v2.jumpserver.xpack.CloudService;
 
 import java.util.Map;
 
@@ -44,6 +45,13 @@ public interface JMSClient {
      * @return
      */
     LunaService luna();
+
+    /**
+     * xpack/cloud 云管中心
+     *
+     * @return
+     */
+    CloudService cloud();
 
     /**
      * permissions 授权规则

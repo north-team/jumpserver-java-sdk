@@ -8,6 +8,7 @@ import com.jumpserver.sdk.v2.jumpserver.luna.LunaService;
 import com.jumpserver.sdk.v2.jumpserver.org.OrgService;
 import com.jumpserver.sdk.v2.jumpserver.permissions.PermissionService;
 import com.jumpserver.sdk.v2.jumpserver.users.UserService;
+import com.jumpserver.sdk.v2.jumpserver.xpack.CloudService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -44,6 +45,11 @@ public class JMSClientImpl implements JMSClient {
     @Override
     public LunaService luna() {
         return Apis.getLunaServices();
+    }
+
+    @Override
+    public CloudService cloud() {
+        return Apis.getCloudServices();
     }
 
     @Override

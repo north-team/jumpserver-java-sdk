@@ -93,6 +93,23 @@ public class JmsAssetsServiceTest extends CommonBeforeTest{
         }
     }
 
+    public static Integer count = 0;
+    @Test
+    public void AssetsNodesChildrenTree() {
+        AssetsNodesChildrenTree(null);
+        System.out.println(count);
+    }
+
+    private void AssetsNodesChildrenTree(String key) {
+        List<AssetsTreeNode> list = os.assets().listAssetsNodeChildrenTree(key);
+        System.out.println(list.size());
+        count += list.size();
+        for (AssetsTreeNode object : list) {
+            System.out.println(object.getId()+"---"+object.getMeta().getNode().getValue()+"---"+object.getMeta().getNode().getParent_id());
+            AssetsNodesChildrenTree(object.getId());
+        }
+    }
+
     @Test
     public void deleteAssetsNode() {
         ActionResponse delete = os.assets().deleteAssetsNode(assetId);

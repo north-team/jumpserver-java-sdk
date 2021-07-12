@@ -6,6 +6,7 @@ import com.jumpserver.sdk.v2.common.BaseJmsService;
 import com.jumpserver.sdk.v2.common.ClientConstants;
 import com.jumpserver.sdk.v2.model.*;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -29,6 +30,16 @@ public class AssertsServiceImpl extends BaseJmsService implements AssertsService
             String parentKey = assetsNode.getKey().substring(0, assetsNode.getKey().lastIndexOf(":"));
             assetsNode.setParent_id(parentKey.indexOf(":") > -1 ? nodeKeyIdInfo.get(parentKey) : "root");
         });
+        return assetsNodes;
+    }
+
+    @Override
+    public List<AssetsTreeNode> listAssetsNodeChildrenTree(String key){
+        String url = ClientConstants.NODES_CHILDREN_TREE;
+        if (StringUtils.isNotBlank(key)) {
+            url += "?key=" + key;
+        }
+        List<AssetsTreeNode> assetsNodes = get(AssetsTreeNode.class, url).executeList();
         return assetsNodes;
     }
 
