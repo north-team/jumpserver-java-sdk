@@ -39,6 +39,8 @@ public class SystemUser {
 
     private String login_mode;
 
+    private String type = "common";
+
 
     public String getId() {
         return id;
@@ -184,4 +186,11 @@ public class SystemUser {
         this.login_mode = login_mode;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 }

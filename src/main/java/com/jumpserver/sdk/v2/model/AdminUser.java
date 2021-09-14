@@ -35,6 +35,8 @@ public class AdminUser {
 
     private String org_id;
 
+    private String type = "admin";
+
     public String getOrg_id() {
         return org_id;
     }
@@ -161,5 +163,13 @@ public class AdminUser {
 
     public void setPublic_key(String public_key) {
         this.public_key = public_key;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
