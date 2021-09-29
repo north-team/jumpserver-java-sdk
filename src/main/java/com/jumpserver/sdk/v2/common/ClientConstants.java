@@ -60,6 +60,7 @@ public final class ClientConstants {
 
     // luna
     public static final String LUNA_URL = "/luna/?login_to=";
+    public static final String LUNA_SSO_URL = BASE_URL + "/authentication/sso/login-url/";
     public static final String LUNA_CONNECT_URL = "/luna/connect/?system={system}&token={token}";
 
 }

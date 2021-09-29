@@ -8,5 +8,7 @@ public interface LunaService {
 
     String connectLunaUrl(String assetId);
 
+    String connectLunaUrl(String assetId, String username);
+
     String connectLunaUrl(String assetId, String systemUserId, String userId, String system);
 }

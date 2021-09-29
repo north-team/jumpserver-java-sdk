@@ -30,6 +30,17 @@ public class LunaServiceImpl extends BaseJmsService implements LunaService {
         return result.toString();
     }
 
+    @Override
+    public String connectLunaUrl(String assetId, String username) {
+        JSONObject p = new JSONObject();
+        p.put("username", username);
+        p.put("next", "/luna/?login_to=" + assetId);
+        Map tokenResult = post(Map.class, uri(ClientConstants.LUNA_SSO_URL))
+                .json(p.toJSONString())
+                .execute();
+        return tokenResult.get("login_url").toString();
+    }
+
     public String connectLunaUrl(String assetId, String systemUserId, String userId, String system) {
         JSONObject p = new JSONObject();
         p.put("user", userId);
