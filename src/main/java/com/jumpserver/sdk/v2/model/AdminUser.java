@@ -21,6 +21,8 @@ public class AdminUser {
 
     private String public_key;
 
+    private String sftp_root;
+
     private Boolean become;
 
     private String become_method;
@@ -163,6 +165,14 @@ public class AdminUser {
 
     public void setPublic_key(String public_key) {
         this.public_key = public_key;
+    }
+
+    public String getSftp_root() {
+        return sftp_root;
+    }
+
+    public void setSftp_root(String sftp_root) {
+        this.sftp_root = sftp_root;
     }
 
     public String getType() {
