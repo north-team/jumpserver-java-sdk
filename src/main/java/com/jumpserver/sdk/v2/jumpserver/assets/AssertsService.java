@@ -4,6 +4,7 @@ import com.jumpserver.sdk.v2.common.ActionResponse;
 import com.jumpserver.sdk.v2.model.*;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author yankaijun
@@ -101,4 +102,5 @@ public interface AssertsService {
 
     ActionResponse deleteAssetsGateway(String assetsGatewayId);
 
+    List<Map> addSystemUsersAssetsRelations(String assetId, String systemUserId);
 }

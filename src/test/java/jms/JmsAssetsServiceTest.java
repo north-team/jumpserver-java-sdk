@@ -1,11 +1,13 @@
 package jms;
 
+import com.alibaba.fastjson.JSONObject;
 import com.jumpserver.sdk.v2.common.ActionResponse;
 import com.jumpserver.sdk.v2.model.*;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 资产API调用相关测试用例
@@ -149,5 +151,13 @@ public class JmsAssetsServiceTest extends CommonBeforeTest{
         object.setValue("演示工作空间-son");
         AssetsNode result = os.assets().createAssetsNodeChildren(nodeId,object);
         System.out.println(result.getId()+"---"+result.getValue()+"---"+result.getParent_id());
+    }
+
+    @Test
+    public void testAddSystemUsersAssetsRelations(){
+        String asset = "42710c88-4a92-4b01-b5b8-89c081f7cccc";
+        String systemuser = "42710c88-4a92-4b01-b5b8-89c081f7cccc";
+        List<Map> r = os.assets().addSystemUsersAssetsRelations(asset, systemuser);
+        System.out.println(JSONObject.toJSONString(r));
     }
 }

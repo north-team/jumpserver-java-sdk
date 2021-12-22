@@ -1,6 +1,8 @@
 package com.jumpserver.sdk.v2.jumpserver.assets;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.jumpserver.sdk.v2.common.ActionResponse;
 import com.jumpserver.sdk.v2.common.BaseJmsService;
 import com.jumpserver.sdk.v2.common.ClientConstants;
@@ -314,5 +316,15 @@ public class AssertsServiceImpl extends BaseJmsService implements AssertsService
         return deleteWithResponse(ClientConstants.GATEWAYS, assetsGatewayId, "/").execute();
     }
 
-
+    @Override
+    public List<Map> addSystemUsersAssetsRelations(String assetId, String systemUserId){
+        checkNotNull(assetId);
+        checkNotNull(systemUserId);
+        JSONArray array = new JSONArray();
+        JSONObject object = new JSONObject();
+        object.put("asset", assetId);
+        object.put("systemuser", systemUserId);
+        array.add(object);
+        return post(Map.class, ClientConstants.ASSET_SYSTEM_USER).json(array.toJSONString()).executeList();
+    }
 }
