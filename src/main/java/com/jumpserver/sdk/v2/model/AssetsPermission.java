@@ -29,6 +29,16 @@ public class AssetsPermission {
 
     private String[] system_users;
 
+    private String[] actions;
+
+    public String[] getActions() {
+        return actions;
+    }
+
+    public void setActions(String[] actions) {
+        this.actions = actions;
+    }
+
     public String getId() {
         return id;
     }
