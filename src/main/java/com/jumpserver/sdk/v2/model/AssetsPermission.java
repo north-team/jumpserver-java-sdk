@@ -29,6 +29,8 @@ public class AssetsPermission {
 
     private String[] system_users;
 
+    private String[] actions;
+
     public String getId() {
         return id;
     }
@@ -131,5 +133,13 @@ public class AssetsPermission {
 
     public void setSystem_users(String[] system_users) {
         this.system_users = system_users;
+    }
+
+    public String[] getActions() {
+        return actions;
+    }
+
+    public void setActions(String[] actions) {
+        this.actions = actions;
     }
 }
