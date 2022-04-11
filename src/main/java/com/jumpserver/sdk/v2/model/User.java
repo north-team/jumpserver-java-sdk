@@ -54,6 +54,8 @@ public class User implements ModelEntity {
     private String source;
 
     private String[] user_permissions;
+    private String[] system_roles;
+    private String[] org_roles;
 
     public String getId() {
         return id;
@@ -256,4 +258,19 @@ public class User implements ModelEntity {
         this.user_permissions = user_permissions;
     }
 
+    public String[] getSystem_roles() {
+        return system_roles;
+    }
+
+    public void setSystem_roles(String[] system_roles) {
+        this.system_roles = system_roles;
+    }
+
+    public String[] getOrg_roles() {
+        return org_roles;
+    }
+
+    public void setOrg_roles(String[] org_roles) {
+        this.org_roles = org_roles;
+    }
 }
