@@ -10,6 +10,8 @@ public class OrgUsers {
     private String id;
     private String organization;
     private String user;
+    private String[] org_roles;
+    private String[] users;
 
     public String getOrgId() {
         return orgId;
@@ -41,5 +43,21 @@ public class OrgUsers {
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public String[] getOrg_roles() {
+        return org_roles;
+    }
+
+    public void setOrg_roles(String[] org_roles) {
+        this.org_roles = org_roles;
+    }
+
+    public String[] getUsers() {
+        return users;
+    }
+
+    public void setUsers(String[] users) {
+        this.users = users;
     }
 }
