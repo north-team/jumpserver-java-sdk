@@ -1,9 +1,11 @@
 package jms;
 
 import com.jumpserver.sdk.v2.common.ActionResponse;
+import com.jumpserver.sdk.v2.common.ClientConstants;
 import com.jumpserver.sdk.v2.model.AssetsPermission;
 import org.junit.Test;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * 授权API调用相关测试用例
@@ -15,9 +17,13 @@ public class JmsPermissionServiceTest extends CommonBeforeTest{
     @Test
     public void addAssetsPermission() {
         AssetsPermission object = new AssetsPermission();
-        object.setSystem_users(new String[]{"6ca16c2b-77ec-4757-a100-ddbde4c1a8c4"});
-        object.setName("API授权规则");
-        AssetsPermission objectBack = os.permissions().createAssetsPermission(object);
+        object.setId("9111c19a-a74e-4b55-9af2-81d53cab6c35");
+        object.setUser_groups(new String[]{"e25c1675-1715-4de6-9ce9-d8f466294963"});
+        object.setAssets(new String[]{"5e1eb5a4-5c10-4383-ab74-4bccd0b0a234"});
+        object.setName("API授权规则test");
+        object.setSystem_users(null);
+        os.getHeaders().put(ClientConstants.X_JMS_ORG, "00000000-0000-0000-0000-000000000002");
+        AssetsPermission objectBack = os.permissions().updateAssetsPermission(object);
         System.out.println(objectBack.getId());
     }
 

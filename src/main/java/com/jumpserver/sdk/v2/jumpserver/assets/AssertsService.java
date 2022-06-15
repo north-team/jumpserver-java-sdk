@@ -54,6 +54,8 @@ public interface AssertsService {
 
     AdminUser getAdminUser(String userId);
 
+    SystemUser getSystemUserInfo(String userId);
+
     AdminUser updateAdminUser(AdminUser adminuser);
 
     AdminUser createAdminUser(AdminUser adminuser);

@@ -49,6 +49,7 @@ public final class ClientConstants {
 
     // admin_user
     public static final String ADMIN_USERS = BASE_URL + "/assets/admin-users/";
+    public static final String USER_INFO = BASE_URL + "/assets/system-users/{userId}/auth-info/";
     public static final String ADMIN_USERS_CLUSTER = BASE_URL + "/assets/admin-users/{id}/clusters/";
     public static final String ADMIN_USERS_AUTH = BASE_URL + "/assets/admin-users/{id}/auth/";
 

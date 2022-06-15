@@ -2,6 +2,7 @@ package jms;
 
 import com.alibaba.fastjson.JSON;
 import com.jumpserver.sdk.v2.common.ActionResponse;
+import com.jumpserver.sdk.v2.common.ClientConstants;
 import com.jumpserver.sdk.v2.model.User;
 import com.jumpserver.sdk.v2.model.UserGroup;
 import org.junit.Test;
@@ -33,8 +34,9 @@ public class JmsUserServiceTest extends CommonBeforeTest {
     public void updateUserGroups() {
         System.out.println("update userGroup::::");
         UserGroup usergroup = new UserGroup();
-        usergroup.setName("X组");
-        usergroup.setId(userGroupId);
+        usergroup.setName("test组");
+        usergroup.setId("73833eb4-4dfc-40f8-a567-69fb69769d83");
+        os.getHeaders().put(ClientConstants.X_JMS_ORG, "00000000-0000-0000-0000-000000000002");
         UserGroup userGroupBack = os.users().updateUserGroup(usergroup);
         System.out.println(userGroupBack.getId());
         System.out.println(userGroupBack.getName());

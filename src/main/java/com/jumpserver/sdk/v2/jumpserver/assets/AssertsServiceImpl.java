@@ -118,7 +118,8 @@ public class AssertsServiceImpl extends BaseJmsService implements AssertsService
     public AssetsNode updateAssetsNodeChildren(String nodeId, AssetsNode node) {
         checkNotNull(nodeId);
         checkNotNull(node);
-        return patch(AssetsNode.class, ClientConstants.NODES_CHILDREN_ADD, nodeId)
+        String url = ClientConstants.NODES_CHILDREN_ADD.replace("{id}", nodeId);
+        return patch(AssetsNode.class, url)
                 .json(JSON.toJSONString(node)).execute();
     }
 
@@ -169,6 +170,13 @@ public class AssertsServiceImpl extends BaseJmsService implements AssertsService
     public AdminUser getAdminUser(String userId) {
         checkNotNull(userId);
         return get(AdminUser.class, ClientConstants.ADMIN_USERS, userId, "/").execute();
+    }
+
+    @Override
+    public SystemUser getSystemUserInfo(String userId) {
+        checkNotNull(userId);
+        String url = ClientConstants.USER_INFO.replace("{userId}", userId);
+        return get(SystemUser.class, url).execute();
     }
 
     @Override

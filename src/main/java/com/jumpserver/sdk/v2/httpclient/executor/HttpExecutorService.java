@@ -19,7 +19,7 @@ public class HttpExecutorService {
             throw re;
         } catch (Exception e) {
             LOG.error(e.getMessage(), e);
-            return null;
+            throw new RuntimeException(e.getMessage());
         }
     }
 

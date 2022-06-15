@@ -1,6 +1,7 @@
 package jms;
 
 import com.jumpserver.sdk.v2.common.ActionResponse;
+import com.jumpserver.sdk.v2.common.ClientConstants;
 import com.jumpserver.sdk.v2.model.Org;
 import com.jumpserver.sdk.v2.model.OrgUsers;
 import org.junit.Test;
@@ -53,8 +54,9 @@ public class JmsOrgServiceTest extends CommonBeforeTest{
     @Test
     public void createOrgUsers() {
         OrgUsers object = new OrgUsers();
-        object.setOrgId(orgIdTest);
-        object.setUser(userId);
+        object.setOrgId("00000000-0000-0000-0000-000000000002");
+        object.setUser("d1afc5c2-fc25-4767-8578-ca8af5d305ef");
+        os.getHeaders().put(ClientConstants.X_JMS_ORG, "00000000-0000-0000-0000-000000000002");
         OrgUsers objectBack = os.orgs().createOrgUsers(object);
         System.out.println(objectBack.getUser());
     }
@@ -69,7 +71,7 @@ public class JmsOrgServiceTest extends CommonBeforeTest{
 
     @Test
     public void deleteOrgUses() {
-        ActionResponse actionResponse = os.orgs().deleteOrgUsers(orgIdTest, userId);
+        ActionResponse actionResponse = os.orgs().deleteOrgUsers("00000000-0000-0000-0000-000000000002", "d1afc5c2-fc25-4767-8578-ca8af5d305ef");
         System.out.println(actionResponse.toString());
     }
 
@@ -77,15 +79,20 @@ public class JmsOrgServiceTest extends CommonBeforeTest{
     @Test
     public void createOrgAdmins() {
         OrgUsers object = new OrgUsers();
-        object.setOrgId(orgIdTest);
-        object.setUser(userId);
-        OrgUsers objectBack = os.orgs().createOrgAdmins(object);
-        System.out.println(objectBack.getUser());
+        object.setOrgId("00000000-0000-0000-0000-000000000002");
+        object.setUser("d1afc5c2-fc25-4767-8578-ca8af5d305ef");
+        object.setOrg_roles(new String[]{"00000000-0000-0000-0000-000000000005"});
+        object.setUsers(new String[]{"d1afc5c2-fc25-4767-8578-ca8af5d305ef"});
+        os.getHeaders().put(ClientConstants.X_JMS_ORG, "00000000-0000-0000-0000-000000000002");
+//        OrgUsers objectBack = os.orgs().createOrgAdmins(object);
+        OrgUsers orgUsers = os.orgs().inviteUsers(object);
+        System.out.println(orgUsers.getUser());
     }
 
     @Test
     public void getOrgAdmins() {
-        List<OrgUsers> object = os.orgs().getOrgAdmins(orgId);
+        os.getHeaders().put(ClientConstants.X_JMS_ORG, "00000000-0000-0000-0000-000000000002");
+        List<OrgUsers> object = os.orgs().getOrgAdmins("00000000-0000-0000-0000-000000000002");
         for (OrgUsers users : object) {
             System.out.println(users.getUser());
         }

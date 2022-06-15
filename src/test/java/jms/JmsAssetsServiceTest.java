@@ -1,6 +1,7 @@
 package jms;
 
 import com.jumpserver.sdk.v2.common.ActionResponse;
+import com.jumpserver.sdk.v2.common.ClientConstants;
 import com.jumpserver.sdk.v2.model.*;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
@@ -78,8 +79,9 @@ public class JmsAssetsServiceTest extends CommonBeforeTest{
     @Test
     public void updateAssetsNode() {
         AssetsNode object = new AssetsNode();
-        object.setId(assetId);
-        object.setValue("docker_tmp");
+        object.setId("95c09728-0624-425f-bb35-b40b57b900e1");
+        object.setValue("test");
+        os.getHeaders().put(ClientConstants.X_JMS_ORG, "3105460f-bb34-4307-8d5f-9cfa9724036e");
         AssetsNode objectBack = os.assets().updateAssetsNode(object);
         System.out.println(objectBack.getId());
     }

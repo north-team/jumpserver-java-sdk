@@ -21,6 +21,7 @@ public class JMSClientImpl implements JMSClient {
 
     private ApiKey apiKey;
     private Config config;
+    private String version;
     private Map<String, Object> headers;
     private static final Logger LOG = LoggerFactory.getLogger(JMSClientImpl.class);
     @SuppressWarnings("rawtypes")
@@ -87,6 +88,14 @@ public class JMSClientImpl implements JMSClient {
     @Override
     public Map getHeaders() {
         return this.headers;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
     }
 }
 
