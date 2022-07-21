@@ -64,6 +64,9 @@ public interface AssertsService {
 
     AdminUser updateAdminUserAuthInfo(AdminUser adminuser);
 
+    //资产可用系统用户
+    List<AssetAccount> listSystemUserByAsset(String assetId);
+
     //系统用户
     List<SystemUser> listSystemUser();
 

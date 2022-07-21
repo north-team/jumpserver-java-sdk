@@ -35,7 +35,7 @@ public final class ClientConstants {
     public static final String ORGADMINS = BASE_URL + "/orgs/orgs/{org_id}/membership/admins/";
     public static final String ORGUSERS = BASE_URL + "/orgs/orgs/{org_id}/membership/users/";
     public static final String INVITE_USERS = BASE_URL + "/users/users/invite/";
-    public static final String REMOVE_USERS = BASE_URL + "/users/users/{org_id}/remove/";
+    public static final String REMOVE_USERS = BASE_URL + "/users/users/{user_id}/remove/";
 
     // nodes children
     public static final String NODES_ID_CHILDREN = BASE_URL + "/assets/nodes/{id}/children/";
@@ -54,6 +54,7 @@ public final class ClientConstants {
     public static final String ADMIN_USERS_AUTH = BASE_URL + "/assets/admin-users/{id}/auth/";
 
     // system_user
+    public static final String ASSET_SYSTEM_USERS = BASE_URL + "/assets/system-users-assets-relations/";
     public static final String SYSTEM_USERS = BASE_URL + "/assets/system-users/";
     public static final String SYSTEM_USERS_AUTHINFO = BASE_URL + "/assets/system-users/{id}/auth-info/";
     public static final String SYSTEM_USERS_PUSH = "/assets/system-users/{id}/push/";

@@ -205,6 +205,11 @@ public class AssertsServiceImpl extends BaseJmsService implements AssertsService
         return patch(AdminUser.class, url).json(JSON.toJSONString(adminUser)).execute();
     }
 
+    @Override
+    public List<AssetAccount> listSystemUserByAsset(String assetId) {
+        return get(AssetAccount.class, uri(ClientConstants.ASSET_SYSTEM_USERS) + "?display=1&draw=1&asset=" + assetId).executeList();
+    }
+
     //系统用户
     @Override
     public List<SystemUser> listSystemUser() {
