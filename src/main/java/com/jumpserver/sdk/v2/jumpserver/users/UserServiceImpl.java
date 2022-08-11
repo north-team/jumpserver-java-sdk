@@ -26,6 +26,11 @@ public class UserServiceImpl extends BaseJmsService implements UserService {
     }
 
     @Override
+    public User getUserInfo() {
+        return get(User.class, ClientConstants.CURRENT_USER).execute();
+    }
+
+    @Override
     public List<User> search(String searchName) {
         checkNotNull(searchName);
         String url = ClientConstants.USERS + "?search=" + searchName;

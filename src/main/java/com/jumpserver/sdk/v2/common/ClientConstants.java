@@ -15,6 +15,7 @@ public final class ClientConstants {
 
     // user
     public static final String USERS = BASE_URL + "/users/users/";
+    public static final String CURRENT_USER = BASE_URL + "/users/profile/";
     public static final String USERGROUPS = BASE_URL + "/users/groups/";
     public static final String USER_PASSWORD_RESET = BASE_URL + "/users/users/{id}/password/";
     public static final String USER_CONNECTION_TOKEN = BASE_URL + "/users/connection-token/";

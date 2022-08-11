@@ -12,6 +12,8 @@ public interface UserService {
 
     User get(String userId);
 
+    User getUserInfo();
+
     List<User> search(String userName);
 
     User update(User user);
