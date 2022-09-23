@@ -48,13 +48,13 @@ public final class ClientConstants {
     // label
     public static final String LABELS = BASE_URL + "/assets/labels/";
 
-    // admin_user
+    // system_user
     public static final String ADMIN_USERS = BASE_URL + "/assets/admin-users/";
-    public static final String USER_INFO = BASE_URL + "/assets/system-users/{userId}/auth-info/";
     public static final String ADMIN_USERS_CLUSTER = BASE_URL + "/assets/admin-users/{id}/clusters/";
     public static final String ADMIN_USERS_AUTH = BASE_URL + "/assets/admin-users/{id}/auth/";
-
-    // system_user
+    public static final String SYSTEM_USER_ACCOUNT = BASE_URL + "/assets/accounts/?systemuser={userId}";
+    public static final String ASSET_ACCOUNT_PASSWORD = BASE_URL + "/assets/account-secrets/{assetAccountId}/";
+    public static final String MFA_CONFIRM = BASE_URL + "/authentication/confirm/";
     public static final String ASSET_SYSTEM_USERS = BASE_URL + "/assets/system-users-assets-relations/";
     public static final String SYSTEM_USERS = BASE_URL + "/assets/system-users/";
     public static final String SYSTEM_USERS_AUTHINFO = BASE_URL + "/assets/system-users/{id}/auth-info/";

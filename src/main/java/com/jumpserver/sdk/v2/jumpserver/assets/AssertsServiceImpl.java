@@ -72,6 +72,7 @@ public class AssertsServiceImpl extends BaseJmsService implements AssertsService
         return deleteWithResponse(ClientConstants.NODES, nodeId, "/").execute();
     }
 
+    @Override
     public ActionResponse deleteAssetsNodeWithAssetCheckCircle(String nodeId) {
         List<AssetsNode> children = listAssetsNodeIdChildren(nodeId);
         if (CollectionUtils.isNotEmpty(children)) {
@@ -105,6 +106,7 @@ public class AssertsServiceImpl extends BaseJmsService implements AssertsService
                 .execute();
     }
 
+    @Override
     public AssetsNode createAssetsNodeChildren(String nodeId, AssetsNode node) {
         checkNotNull(nodeId);
         checkNotNull(node);
@@ -175,8 +177,27 @@ public class AssertsServiceImpl extends BaseJmsService implements AssertsService
     @Override
     public SystemUser getSystemUserInfo(String userId) {
         checkNotNull(userId);
-        String url = ClientConstants.USER_INFO.replace("{userId}", userId);
+        String url = ClientConstants.SYSTEM_USERS_AUTHINFO.replace("{userId}", userId);
         return get(SystemUser.class, url).execute();
+    }
+
+    @Override
+    public List<AssetAccount> getAssetAccounts(String userId) {
+        checkNotNull(userId);
+        String url = ClientConstants.SYSTEM_USER_ACCOUNT.replace("{userId}", userId);
+        List<AssetAccount> systemUsers = get(AssetAccount.class, url).executeList();
+        return systemUsers;
+    }
+
+    @Override
+    public AssetAccount getAssetAccountPassword(String assetAccountId, String syncPassword) {
+        checkNotNull(assetAccountId);
+        Confirm confirm = new Confirm();
+        confirm.setSecret_key(syncPassword);
+        String str = ClientConstants.MFA_CONFIRM;
+        post(String.class, str).entity(confirm).execute();
+        String url = ClientConstants.ASSET_ACCOUNT_PASSWORD.replace("{assetAccountId}", assetAccountId);
+        return get(AssetAccount.class, url).execute();
     }
 
     @Override

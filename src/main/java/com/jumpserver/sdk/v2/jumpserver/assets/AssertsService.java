@@ -56,6 +56,10 @@ public interface AssertsService {
 
     SystemUser getSystemUserInfo(String userId);
 
+    List<AssetAccount> getAssetAccounts(String userId);
+
+    AssetAccount getAssetAccountPassword(String assetAccountId, String syncPassword);
+
     AdminUser updateAdminUser(AdminUser adminuser);
 
     AdminUser createAdminUser(AdminUser adminuser);
