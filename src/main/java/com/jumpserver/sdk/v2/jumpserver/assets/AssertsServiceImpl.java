@@ -177,7 +177,7 @@ public class AssertsServiceImpl extends BaseJmsService implements AssertsService
     @Override
     public SystemUser getSystemUserInfo(String userId) {
         checkNotNull(userId);
-        String url = ClientConstants.SYSTEM_USERS_AUTHINFO.replace("{userId}", userId);
+        String url = ClientConstants.SYSTEM_USERS_AUTHINFO.replace("{id}", userId);
         return get(SystemUser.class, url).execute();
     }
 
