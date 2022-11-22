@@ -1,9 +1,11 @@
 package com.jumpserver.sdk.v2.model;
 
+import com.jumpserver.sdk.v2.model.entity.ModelEntity;
+
 /**
  * @author houchen
  */
-public class AssetAccount {
+public class AssetAccount implements ModelEntity {
     private String asset;
     private String asset_display;
     private String id;

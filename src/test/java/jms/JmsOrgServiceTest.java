@@ -33,7 +33,7 @@ public class JmsOrgServiceTest extends CommonBeforeTest{
     @Test
     public void updateOrg() {
         Org object = new Org();
-        object.setId(orgId);
+        object.setId("16f7ecc0-48ca-4e46-894b-ed0d8f998dfe");
         object.setName("API");
         Org objectBack = os.orgs().updateOrg(object);
         System.out.println(objectBack.getId());

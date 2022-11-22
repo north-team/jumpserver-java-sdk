@@ -41,7 +41,7 @@ public class JmsAdminUserTest extends CommonBeforeTest{
 
     @Test
     public void getAdminUser() {
-        System.out.println(os.assets().getSystemUserInfo("bbefdf7b-f69d-46cd-8c16-50fad469b619"));
+        System.out.println(os.assets().listSystemUserByAsset("11636e60-215b-4a97-942f-5427eac95ed1"));
     }
 
     @Test

@@ -49,6 +49,8 @@ public interface AssertsService {
 
     ActionResponse delete(String assetId);
 
+    AssetAccount relateSystemUser(String assetId, String systemUserId);
+
     //管理用户
     List<AdminUser> listAdminUser();
 

@@ -1,6 +1,7 @@
 package com.jumpserver.sdk.v2.jumpserver.assets;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.jumpserver.sdk.v2.common.ActionResponse;
 import com.jumpserver.sdk.v2.common.BaseJmsService;
 import com.jumpserver.sdk.v2.common.ClientConstants;
@@ -146,6 +147,16 @@ public class AssertsServiceImpl extends BaseJmsService implements AssertsService
     public ActionResponse delete(String assetId) {
         checkNotNull(assetId);
         return deleteWithResponse(ClientConstants.ASSETS, assetId, "/").execute();
+    }
+
+    @Override
+    public AssetAccount relateSystemUser(String assetId, String systemUserId) {
+        checkNotNull(assetId);
+        checkNotNull(systemUserId);
+        AssetAccount assetAccount = new AssetAccount();
+        assetAccount.setAsset(assetId);
+        assetAccount.setSystemuser(systemUserId);
+        return post(AssetAccount.class, ClientConstants.ASSET_SYSTEM_USERS).json(JSONObject.toJSONString(assetAccount)).execute();
     }
 
     @Override

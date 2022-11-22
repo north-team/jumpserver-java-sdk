@@ -1,5 +1,6 @@
 package jms;
 
+import com.alibaba.fastjson.JSONObject;
 import com.jumpserver.sdk.v2.common.ActionResponse;
 import com.jumpserver.sdk.v2.common.ClientConstants;
 import com.jumpserver.sdk.v2.model.*;
@@ -30,6 +31,14 @@ public class JmsAssetsServiceTest extends CommonBeforeTest{
         Asset asset = os.assets().get(assetId);
         System.out.println(asset.getHostname());
         System.out.println(asset.getAdmin_user());
+    }
+
+    @Test
+    public void assetAddSystemUser() {
+        String assetId = "b4dce7fb-2a8d-4f40-bb32-aef1448b76b9";
+        String systemUserId = "4dfbb739-5397-4eac-81df-b07b1b280352";
+        AssetAccount assetAccount = os.assets().relateSystemUser(assetId, systemUserId);
+        System.out.println(JSONObject.toJSONString(assetAccount));
     }
 
     @Test
