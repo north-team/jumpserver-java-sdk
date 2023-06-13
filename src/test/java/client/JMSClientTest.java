@@ -1,10 +1,10 @@
 package client;
 
-import com.jumpserver.sdk.v2.builder.ClientBuilder;
-import com.jumpserver.sdk.v2.builder.JMSClient;
-import com.jumpserver.sdk.v2.common.ClientConstants;
-import com.jumpserver.sdk.v2.httpclient.build.Config;
-import com.jumpserver.sdk.v2.model.UserGroup;
+import com.jumpserver.sdk.builder.ClientBuilder;
+import com.jumpserver.sdk.builder.JMSClient;
+import com.jumpserver.sdk.common.ClientConstants;
+import com.jumpserver.sdk.httpclient.build.Config;
+import com.jumpserver.sdk.model.usergroup.UserGroup;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
