@@ -5,6 +5,7 @@ import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
 import com.jumpserver.sdk.jumpserver.luna.LunaService;
 import com.jumpserver.sdk.jumpserver.org.OrgService;
 import com.jumpserver.sdk.jumpserver.permissions.v2.PermissionService;
+import com.jumpserver.sdk.jumpserver.permissions.v3.PermissionV3Service;
 import com.jumpserver.sdk.jumpserver.users.UserService;
 
 public class Apis {
@@ -29,6 +30,10 @@ public class Apis {
 
     public static PermissionService getPermissionServices() {
         return get(PermissionService.class);
+    }
+
+    public static PermissionV3Service getPermissionV3Services() {
+        return get(PermissionV3Service.class);
     }
 
     public static LunaService getLunaServices() {

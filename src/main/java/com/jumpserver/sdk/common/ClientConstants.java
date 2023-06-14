@@ -26,6 +26,7 @@ public final class ClientConstants {
 
     // nodes
     public static final String ASSETS = BASE_URL + "/assets/assets/";
+    public static final String ASSETSV3 = BASE_URL + "/assets/hosts/";
 
     //网域
     public static final String DOMAINS = BASE_URL + "/assets/domains/";

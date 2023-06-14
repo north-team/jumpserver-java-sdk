@@ -11,6 +11,8 @@ import com.jumpserver.sdk.jumpserver.org.OrgService;
 import com.jumpserver.sdk.jumpserver.org.OrgServiceImpl;
 import com.jumpserver.sdk.jumpserver.permissions.v2.PermissionService;
 import com.jumpserver.sdk.jumpserver.permissions.v2.PermissionServiceImpl;
+import com.jumpserver.sdk.jumpserver.permissions.v3.PermissionV3Service;
+import com.jumpserver.sdk.jumpserver.permissions.v3.PermissionV3ServiceImpl;
 import com.jumpserver.sdk.jumpserver.users.UserService;
 import com.jumpserver.sdk.jumpserver.users.UserServiceImpl;
 
@@ -25,6 +27,7 @@ public class DefaultAPIProvider implements APIProvider {
     public void initialize() {
         bind(UserService.class, UserServiceImpl.class);
         bind(PermissionService.class, PermissionServiceImpl.class);
+        bind(PermissionV3Service.class, PermissionV3ServiceImpl.class);
         bind(LunaService.class, LunaServiceImpl.class);
         bind(OrgService.class, OrgServiceImpl.class);
         bind(AssertsService.class, AssertsServiceImpl.class);

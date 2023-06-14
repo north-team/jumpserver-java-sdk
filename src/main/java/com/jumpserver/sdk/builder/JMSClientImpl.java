@@ -8,6 +8,7 @@ import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
 import com.jumpserver.sdk.jumpserver.luna.LunaService;
 import com.jumpserver.sdk.jumpserver.org.OrgService;
 import com.jumpserver.sdk.jumpserver.permissions.v2.PermissionService;
+import com.jumpserver.sdk.jumpserver.permissions.v3.PermissionV3Service;
 import com.jumpserver.sdk.jumpserver.users.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,6 +57,11 @@ public class JMSClientImpl implements JMSClient {
     @Override
     public PermissionService permissions() {
         return Apis.getPermissionServices();
+    }
+
+    @Override
+    public PermissionV3Service permissionsV3() {
+        return Apis.getPermissionV3Services();
     }
 
     public static JMSClient createSession(ApiKey apiKey, Map<String, Object> headers, Config config) {

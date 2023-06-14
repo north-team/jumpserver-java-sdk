@@ -1,9 +1,6 @@
-package com.jumpserver.sdk.model.asset.v3;
+package com.jumpserver.sdk.model.permission.v3;
 
-/**
- * @author : houchen
- */
-public class AssetNode {
+public class UserGroup {
     private String pk;
 
     public String getPk() {

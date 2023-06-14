@@ -1,21 +1,16 @@
 package com.jumpserver.sdk.model.asset.v3;
 
+import com.jumpserver.sdk.common.Annotation.PlatformValidator;
+
 public class Platform {
+    @PlatformValidator
+    private Integer pk;
 
-    private int id;
-    private String name;
-    public void setId(int id) {
-         this.id = id;
-     }
-     public int getId() {
-         return id;
-     }
+    public Integer getPk() {
+        return pk;
+    }
 
-    public void setName(String name) {
-         this.name = name;
-     }
-     public String getName() {
-         return name;
-     }
-
+    public void setPk(Integer pk) {
+        this.pk = pk;
+    }
 }

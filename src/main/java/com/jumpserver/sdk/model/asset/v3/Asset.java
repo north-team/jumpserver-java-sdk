@@ -1,7 +1,11 @@
 package com.jumpserver.sdk.model.asset.v3;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.jumpserver.sdk.common.Annotation.PlatformValidator;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -10,19 +14,31 @@ import java.util.List;
 public class Asset {
 
     private String id;
+    @NotBlank(message = "资产名称不能为空")
+    @Length(message = "资产名称长度需在1-128位之间", min = 1, max = 128)
     private String name;
+    @NotBlank(message = "地址不能为空")
+    @Length(message = "地址长度需在1-767位之间", min = 1, max = 767)
     private String address;
     private String comment;
     private String domain;
+    @Valid
     private Platform platform;
     private List<AssetNode> nodes;
+    @Valid
     private List<Protocol> protocols;
+    @Valid
+    private List<AssetAccount> accounts;
     @JSONField(name = "is_active")
     private boolean isActive;
-    @JSONField(name = "date_verified")
-    private String dateVerified;
-    @JSONField(name = "date_created")
-    private String dateCreated;
+
+    public List<AssetAccount> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(List<AssetAccount> accounts) {
+        this.accounts = accounts;
+    }
 
     public String getId() {
         return id;
@@ -94,21 +110,5 @@ public class Asset {
 
     public void setActive(boolean active) {
         isActive = active;
-    }
-
-    public String getDateVerified() {
-        return dateVerified;
-    }
-
-    public void setDateVerified(String dateVerified) {
-        this.dateVerified = dateVerified;
-    }
-
-    public String getDateCreated() {
-        return dateCreated;
-    }
-
-    public void setDateCreated(String dateCreated) {
-        this.dateCreated = dateCreated;
     }
 }
