@@ -1,4 +1,4 @@
-package com.jumpserver.sdk.model.permission;
+package com.jumpserver.sdk.model.permission.v2;
 
 import java.util.Date;
 

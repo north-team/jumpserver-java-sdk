@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.jumpserver.sdk.common.ActionResponse;
 import com.jumpserver.sdk.common.BaseJmsService;
 import com.jumpserver.sdk.common.ClientConstants;
-import com.jumpserver.sdk.model.permission.AssetsPermission;
+import com.jumpserver.sdk.model.permission.v2.AssetsPermission;
 
 import java.util.List;
 

@@ -3,7 +3,7 @@ package jms.v3;
 import com.alibaba.fastjson.JSON;
 import com.jumpserver.sdk.common.ActionResponse;
 import com.jumpserver.sdk.common.ClientConstants;
-import com.jumpserver.sdk.jumpserver.permissions.v3.PermissionV3Service;
+import com.jumpserver.sdk.jumpserver.permissions.v3.Request.AssetsPermissionRequest;
 import com.jumpserver.sdk.model.permission.v3.AssetsPermission;
 import jms.v2.CommonBeforeTest;
 import org.junit.Test;
@@ -24,12 +24,6 @@ public class JmsPermissionServiceTest extends CommonBeforeTest {
                 "        \"0520beb5-7e2e-458e-9795-1a46e467466b\"\n" +
                 "    ],\n" +
                 "    \"nodes\": [\n" +
-                "        {\n" +
-                "            \"pk\": \"1ecb988f-ded3-4b57-bc8f-808467abbe2f\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pk\": \"f45c6018-8033-4c38-9936-4e0551752440\"\n" +
-                "        }\n" +
                 "    ],\n" +
                 "    \"accounts\": [\n" +
                 "        \"@ALL\"\n" +
@@ -46,32 +40,23 @@ public class JmsPermissionServiceTest extends CommonBeforeTest {
                 "    \"date_expired\": \"2123-05-21T09:58:43.320Z\",\n" +
                 "    \"name\": \"tyhtestAuth6\",\n" +
                 "    \"users\": [\n" +
-                "        {\n" +
-                "            \"pk\": \"14d5e9fb-aad5-4fab-b4a2-308ea4d6d2f8\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pk\": \"158a375a-802d-49dc-9f44-7a231ee25d1f\"\n" +
-                "        }\n" +
+                "        \"77b62a3d-3296-4b0d-904f-dbd5845fa3c4\"\n" +
                 "    ],\n" +
                 "    \"user_groups\": [\n" +
-                "        {\n" +
-                "            \"pk\": \"08758b8c-00bc-46d8-9557-0ef9f3a60b74\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pk\": \"992ab02e-a543-40d4-affc-b1b794b0c9ae\"\n" +
-                "        }\n" +
+                "\"08758b8c-00bc-46d8-9557-0ef9f3a60b74\",\n" +
+                "\"992ab02e-a543-40d4-affc-b1b794b0c9ae\"\n" +
                 "    ]\n" +
                 "}";
-        AssetsPermission object = JSON.parseObject(paramStr, AssetsPermission.class);
+        AssetsPermissionRequest object = JSON.parseObject(paramStr, AssetsPermissionRequest.class);
 
         os.getHeaders().put(ClientConstants.X_JMS_ORG, "00000000-0000-0000-0000-000000000002");
-        com.jumpserver.sdk.model.permission.AssetsPermission objectBack = os.permissionsV3().createAssetsPermission(object);
+        AssetsPermission objectBack = os.permissionsV3().createAssetsPermission(object);
         System.out.println(objectBack.getId());
     }
 
     @Test
     public void getAssetsPermission() {
-        com.jumpserver.sdk.model.permission.AssetsPermission object = os.permissionsV3().getAssetsPermission("16f05dd6-2083-499d-b74d-4cb8caf1038f");
+        AssetsPermission object = os.permissionsV3().getAssetsPermission("16f05dd6-2083-499d-b74d-4cb8caf1038f");
         System.out.println(object.getName());
     }
 
@@ -82,12 +67,6 @@ public class JmsPermissionServiceTest extends CommonBeforeTest {
                 "        \"0520beb5-7e2e-458e-9795-1a46e467466b\"\n" +
                 "    ],\n" +
                 "    \"nodes\": [\n" +
-                "        {\n" +
-                "            \"pk\": \"1ecb988f-ded3-4b57-bc8f-808467abbe2f\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pk\": \"f45c6018-8033-4c38-9936-4e0551752440\"\n" +
-                "        }\n" +
                 "    ],\n" +
                 "    \"accounts\": [\n" +
                 "        \"@ALL\"\n" +
@@ -100,37 +79,27 @@ public class JmsPermissionServiceTest extends CommonBeforeTest {
                 "        \"paste\"\n" +
                 "    ],\n" +
                 "    \"is_active\": true,\n" +
-                "    \"id\": \"48e66510-f8df-4a13-8bd5-27fa11019dde\",\n" +
                 "    \"date_start\": \"2023-06-14T09:58:43.320Z\",\n" +
                 "    \"date_expired\": \"2123-05-21T09:58:43.320Z\",\n" +
                 "    \"name\": \"tyhtestAuth6\",\n" +
                 "    \"users\": [\n" +
-                "        {\n" +
-                "            \"pk\": \"14d5e9fb-aad5-4fab-b4a2-308ea4d6d2f8\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pk\": \"158a375a-802d-49dc-9f44-7a231ee25d1f\"\n" +
-                "        }\n" +
+                "        \"77b62a3d-3296-4b0d-904f-dbd5845fa3c4\"\n" +
                 "    ],\n" +
                 "    \"user_groups\": [\n" +
-                "        {\n" +
-                "            \"pk\": \"08758b8c-00bc-46d8-9557-0ef9f3a60b74\"\n" +
-                "        },\n" +
-                "        {\n" +
-                "            \"pk\": \"992ab02e-a543-40d4-affc-b1b794b0c9ae\"\n" +
-                "        }\n" +
+                "\"08758b8c-00bc-46d8-9557-0ef9f3a60b74\",\n" +
+                "\"992ab02e-a543-40d4-affc-b1b794b0c9ae\"\n" +
                 "    ]\n" +
                 "}";
-        AssetsPermission object = JSON.parseObject(paramStr, AssetsPermission.class);
-        com.jumpserver.sdk.model.permission.AssetsPermission objectBack = os.permissionsV3().updateAssetsPermission(object);
+        AssetsPermissionRequest object = JSON.parseObject(paramStr, AssetsPermissionRequest.class);
+        AssetsPermission objectBack = os.permissionsV3().updateAssetsPermission(object);
         System.out.println(objectBack.getId());
     }
 
     @Test
     public void AssetsPermission() {
-        List<com.jumpserver.sdk.model.permission.AssetsPermission> list = os.permissionsV3().list();
+        List<AssetsPermission> list = os.permissionsV3().list();
         System.out.println(list.size());
-        for (com.jumpserver.sdk.model.permission.AssetsPermission object : list) {
+        for (AssetsPermission object : list) {
             System.out.println(object.getId());
             System.out.println(object.getName());
         }

@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.jumpserver.sdk.common.ActionResponse;
 import com.jumpserver.sdk.common.BaseJmsService;
 import com.jumpserver.sdk.common.ClientConstants;
+import com.jumpserver.sdk.jumpserver.assets.v3.Request.AssetRequest;
 import com.jumpserver.sdk.model.asset.v3.Asset;
 import com.jumpserver.sdk.model.asset.v3.DescribeAsset;
 
@@ -21,16 +22,16 @@ public class AssertsV3ServiceImpl extends BaseJmsService implements AssertsV3Ser
     }
 
     @Override
-    public Asset update(Asset asset) {
-        checkNotNull(asset);
-        return put(Asset.class, ClientConstants.ASSETSV3, asset.getId(), "/").json(JSON.toJSONString(asset)).execute();
+    public Asset update(AssetRequest assetRequest) {
+        checkNotNull(assetRequest);
+        return put(Asset.class, ClientConstants.ASSETSV3, assetRequest.getId(), "/").json(JSON.toJSONString(assetRequest)).execute();
     }
 
     @Override
-    public Asset create(Asset asset) {
-        checkNotNull(asset);
-        return post(Asset.class, uri(ClientConstants.ASSETSV3, "?platform=", asset.getPlatform().getPk()))
-                .json(JSON.toJSONString(asset))
+    public Asset create(AssetRequest assetRequest) {
+        checkNotNull(assetRequest);
+        return post(Asset.class, uri(ClientConstants.ASSETSV3, "?platform=", assetRequest.getPlatform()))
+                .json(JSON.toJSONString(assetRequest))
                 .execute();
     }
 

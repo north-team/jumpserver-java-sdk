@@ -1,28 +1,41 @@
-package com.jumpserver.sdk.model.asset.v3;
+package com.jumpserver.sdk.jumpserver.assets.v3.Request;
+
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.jumpserver.sdk.common.Annotation.PlatformValidator;
+import com.jumpserver.sdk.model.asset.v3.Protocol;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
  * @author : houchen
  */
-public class Asset {
+public class AssetRequest {
 
     private String id;
+    @NotBlank(message = "资产名称不能为空")
+    @Length(message = "资产名称长度需在1-128位之间", min = 1, max = 128)
     private String name;
+    @NotBlank(message = "地址不能为空")
+    @Length(message = "地址长度需在1-767位之间", min = 1, max = 767)
     private String address;
     private String comment;
     private String domain;
-    private Platform platform;
-    private List<AssetNode> nodes;
+    @PlatformValidator
+    private Integer platform;
+    /**
+     * node的id
+     */
+    private List<String> nodes;
+    @Valid
     private List<Protocol> protocols;
+    @Valid
+    private List<AssetAccount> accounts;
     @JSONField(name = "is_active")
     private boolean isActive;
-    @JSONField(name = "date_verified")
-    private String dateVerified;
-    @JSONField(name = "date_created")
-    private String dateCreated;
 
     public String getId() {
         return id;
@@ -64,19 +77,19 @@ public class Asset {
         this.domain = domain;
     }
 
-    public Platform getPlatform() {
+    public Integer getPlatform() {
         return platform;
     }
 
-    public void setPlatform(Platform platform) {
+    public void setPlatform(Integer platform) {
         this.platform = platform;
     }
 
-    public List<AssetNode> getNodes() {
+    public List<String> getNodes() {
         return nodes;
     }
 
-    public void setNodes(List<AssetNode> nodes) {
+    public void setNodes(List<String> nodes) {
         this.nodes = nodes;
     }
 
@@ -88,6 +101,14 @@ public class Asset {
         this.protocols = protocols;
     }
 
+    public List<AssetAccount> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(List<AssetAccount> accounts) {
+        this.accounts = accounts;
+    }
+
     public boolean isActive() {
         return isActive;
     }
@@ -95,20 +116,5 @@ public class Asset {
     public void setActive(boolean active) {
         isActive = active;
     }
-
-    public String getDateVerified() {
-        return dateVerified;
-    }
-
-    public void setDateVerified(String dateVerified) {
-        this.dateVerified = dateVerified;
-    }
-
-    public String getDateCreated() {
-        return dateCreated;
-    }
-
-    public void setDateCreated(String dateCreated) {
-        this.dateCreated = dateCreated;
-    }
 }
+

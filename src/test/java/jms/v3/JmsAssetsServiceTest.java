@@ -3,6 +3,7 @@ package jms.v3;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.jumpserver.sdk.common.ActionResponse;
+import com.jumpserver.sdk.jumpserver.assets.v3.Request.AssetRequest;
 import com.jumpserver.sdk.model.asset.v3.Asset;
 import com.jumpserver.sdk.model.asset.v3.DescribeAsset;
 import jms.v2.CommonBeforeTest;
@@ -25,14 +26,11 @@ public class JmsAssetsServiceTest extends CommonBeforeTest{
     @Test
     public void createAsset() {
         String paramStr = "{\n" +
-                "    \"id\":\"0520beb5-7e2e-458e-9795-1a46e467466b\",\n" +
-                "    \"platform\": {\n" +
-                "        \"pk\": 1\n" +
-                "    },\n" +
+                "    \"id\":\"bec0b999-2f6d-40f8-8345-570ad6659857\",\n" +
+                "    \"platform\": 1,\n" +
                 "        \"nodes\": [\n" +
-                "        {\n" +
-                "            \"pk\": \"d3a51c53-241e-4bf0-92dd-a572a9a91866\"\n" +
-                "        }\n" +
+                "    \"1ecb988f-ded3-4b57-bc8f-808467abbe2f\",\n" +
+                "    \"c87155fb-f01f-4c12-b1ad-cff5d5d441c6\"\n" +
                 "    ],\n" +
                 "    \"protocols\": [\n" +
                 "        {\n" +
@@ -42,8 +40,8 @@ public class JmsAssetsServiceTest extends CommonBeforeTest{
                 "    ],\n" +
                 "    \"labels\": [],\n" +
                 "    \"is_active\": true,\n" +
-                "    \"name\": \"tyh-test3\",\n" +
-                "    \"address\": \"111.111.111.114\",\n" +
+                "    \"name\": \"tyhtyhtyh\",\n" +
+                "    \"address\": \"111.111.111.118\",\n" +
                 "    \"accounts\": [\n" +
                 "        {\n" +
                 "            \"privileged\": true,\n" +
@@ -51,14 +49,14 @@ public class JmsAssetsServiceTest extends CommonBeforeTest{
                 "            \"push_now\": false,\n" +
                 "            \"on_invalid\": \"error\",\n" +
                 "            \"is_active\": true,\n" +
-                "            \"name\": \"tyh1\",\n" +
-                "            \"username\": \"tyh1\",\n" +
+                "            \"name\": \"tyh2\",\n" +
+                "            \"username\": \"tyh2\",\n" +
                 "            \"secret\": \"QDYZcqr2Ud4HBtKMEOHf4wRYak02zDsn5UEz/Hsi3uDlF3nfbdxyfXooHN7CQ6lgZfkuUFKLw8BYHl3Q+y45ebKBRu7fqzFB0UdxXIpwc/aHjwCfaGRFIiivK1K8ucZ+emhAi78JpRCFI10MJKutEABAgK19xzYyDMBucN0MRt8=:1viS34HPOlJ9dNmLFnQE9w==\",\n" +
                 "            \"comment\": \"this is comment\"        }\n" +
                 "    ]\n" +
                 "}";
-        Asset asset = JSON.parseObject(paramStr, Asset.class);
-        Asset assetResult = os.assetsV3().create(asset);
+        AssetRequest assetRequest = JSON.parseObject(paramStr, AssetRequest.class);
+        Asset assetResult = os.assetsV3().create(assetRequest);
         String sss = "sss";
     }
 
@@ -72,13 +70,13 @@ public class JmsAssetsServiceTest extends CommonBeforeTest{
     public void updateAsset() {
         String paramStr = "{\n" +
                 "    \"id\":\"0520beb5-7e2e-458e-9795-1a46e467466b\",\n" +
-                "    \"platform\": {\n" +
-                "        \"pk\": 1\n" +
-                "    },\n" +
+                "    \"platform\": \n" +
+                "        1\n" +
+                "    ,\n" +
                 "        \"nodes\": [\n" +
                 "        {\n" +
-                "            \"pk\": \"d3a51c53-241e-4bf0-92dd-a572a9a91866\"\n" +
-                "        }\n" +
+                "            \"d3a51c53-241e-4bf0-92dd-a572a9a91866\"\n" +
+                "        \n" +
                 "    ],\n" +
                 "    \"protocols\": [\n" +
                 "        {\n" +
@@ -91,8 +89,8 @@ public class JmsAssetsServiceTest extends CommonBeforeTest{
                 "    \"name\": \"tyh-test3\",\n" +
                 "    \"address\": \"111.111.111.114\",\n" +
                 "}";
-        Asset asset = JSON.parseObject(paramStr, Asset.class);
-        Asset assetResult = os.assetsV3().update(asset);
+        AssetRequest assetRequest = JSON.parseObject(paramStr, AssetRequest.class);
+        Asset assetResult = os.assetsV3().update(assetRequest);
         String sss = "sss";
     }
 }

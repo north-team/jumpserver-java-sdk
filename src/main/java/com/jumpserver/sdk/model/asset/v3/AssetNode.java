@@ -4,13 +4,19 @@ package com.jumpserver.sdk.model.asset.v3;
  * @author : houchen
  */
 public class AssetNode {
-    private String pk;
-
-    public String getPk() {
-        return pk;
+    private String id;
+    private String name;
+    public void setId(String id) {
+        this.id = id;
+    }
+    public String getId() {
+        return id;
     }
 
-    public void setPk(String pk) {
-        this.pk = pk;
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
     }
 }
