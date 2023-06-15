@@ -1,8 +1,13 @@
-package com.jumpserver.sdk.model.permission.v3;
+package com.jumpserver.sdk.jumpserver.permissions.v3.Request;
 
-public class AssetsPermission {
+import com.jumpserver.sdk.common.Annotation.ActionValidator;
+import org.hibernate.validator.constraints.Length;
+
+import java.util.List;
+
+public class AssetsPermissionRequest {
     private String id;
-
+    @Length(message = "资产授权名称长度需要在1-128之间")
     private String name;
 
     private Boolean is_active;
@@ -17,27 +22,25 @@ public class AssetsPermission {
 
     private String comment;
 
-    private String[] user_groups;
-
-    private String[] users;
-
-    private String[] nodes;
-
-    private String[] assets;
-
-    private String[] system_users;
-
-    private String[] actions;
-
-    private String[] accounts;
-
-    public String[] getAccounts() {
-        return accounts;
-    }
-
-    public void setAccounts(String[] accounts) {
-        this.accounts = accounts;
-    }
+    private List<String> accounts;
+    /**
+     * 用户组的id
+     */
+    private List<String> user_groups;
+    /**
+     * 用户的id
+     */
+    private List<String> users;
+    /**
+     * 节点的id
+     */
+    private List<String> nodes;
+    /**
+     * 资产的ID
+     */
+    private List<String> assets;
+    @ActionValidator
+    private List<String> actions;
 
     public String getId() {
         return id;
@@ -103,51 +106,51 @@ public class AssetsPermission {
         this.comment = comment;
     }
 
-    public String[] getUser_groups() {
+    public List<String> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(List<String> accounts) {
+        this.accounts = accounts;
+    }
+
+    public List<String> getUser_groups() {
         return user_groups;
     }
 
-    public void setUser_groups(String[] user_groups) {
+    public void setUser_groups(List<String> user_groups) {
         this.user_groups = user_groups;
     }
 
-    public String[] getUsers() {
+    public List<String> getUsers() {
         return users;
     }
 
-    public void setUsers(String[] users) {
+    public void setUsers(List<String> users) {
         this.users = users;
     }
 
-    public String[] getNodes() {
+    public List<String> getNodes() {
         return nodes;
     }
 
-    public void setNodes(String[] nodes) {
+    public void setNodes(List<String> nodes) {
         this.nodes = nodes;
     }
 
-    public String[] getAssets() {
+    public List<String> getAssets() {
         return assets;
     }
 
-    public void setAssets(String[] assets) {
+    public void setAssets(List<String> assets) {
         this.assets = assets;
     }
 
-    public String[] getSystem_users() {
-        return system_users;
-    }
-
-    public void setSystem_users(String[] system_users) {
-        this.system_users = system_users;
-    }
-
-    public String[] getActions() {
+    public List<String> getActions() {
         return actions;
     }
 
-    public void setActions(String[] actions) {
+    public void setActions(List<String> actions) {
         this.actions = actions;
     }
 }
