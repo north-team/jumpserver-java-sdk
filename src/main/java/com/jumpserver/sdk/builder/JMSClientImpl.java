@@ -3,6 +3,7 @@ package com.jumpserver.sdk.builder;
 import com.alibaba.fastjson.JSONObject;
 import com.jumpserver.sdk.api.Apis;
 import com.jumpserver.sdk.httpclient.build.Config;
+import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsService;
 import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
 import com.jumpserver.sdk.jumpserver.luna.LunaService;
@@ -42,6 +43,11 @@ public class JMSClientImpl implements JMSClient {
     @Override
     public AssertsV3Service assetsV3() {
         return Apis.getAssetsV3Services();
+    }
+
+    @Override
+    public AssetNodeV3Service assetNodeV3() {
+        return Apis.getAssetNodeV3Services();
     }
 
     @Override

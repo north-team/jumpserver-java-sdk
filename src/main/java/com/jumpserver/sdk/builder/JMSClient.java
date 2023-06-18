@@ -1,5 +1,6 @@
 package com.jumpserver.sdk.builder;
 
+import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsService;
 import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
 import com.jumpserver.sdk.jumpserver.luna.LunaService;
@@ -39,6 +40,12 @@ public interface JMSClient {
      * @return
      */
     AssertsV3Service assetsV3();
+    /**
+     * assetNode 资产节点信息
+     *
+     * @return
+     */
+    AssetNodeV3Service assetNodeV3();
 
     /**
      * assets 资产信息

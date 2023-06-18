@@ -1,5 +1,6 @@
 package com.jumpserver.sdk.api;
 
+import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsService;
 import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
 import com.jumpserver.sdk.jumpserver.luna.LunaService;
@@ -26,6 +27,10 @@ public class Apis {
 
     public static AssertsV3Service getAssetsV3Services() {
         return get(AssertsV3Service.class);
+    }
+
+    public static AssetNodeV3Service getAssetNodeV3Services() {
+        return get(AssetNodeV3Service.class);
     }
 
     public static PermissionService getPermissionServices() {
