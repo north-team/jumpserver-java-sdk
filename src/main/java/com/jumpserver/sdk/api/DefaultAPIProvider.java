@@ -1,6 +1,8 @@
 package com.jumpserver.sdk.api;
 
 import com.google.common.collect.Maps;
+import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
+import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3ServiceImpl;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsService;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsServiceImpl;
 import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
@@ -32,6 +34,7 @@ public class DefaultAPIProvider implements APIProvider {
         bind(OrgService.class, OrgServiceImpl.class);
         bind(AssertsService.class, AssertsServiceImpl.class);
         bind(AssertsV3Service.class, AssertsV3ServiceImpl.class);
+        bind(AssetNodeV3Service.class, AssetNodeV3ServiceImpl.class);
     }
 
     @SuppressWarnings("unchecked")
