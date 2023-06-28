@@ -10,6 +10,7 @@ import com.jumpserver.sdk.jumpserver.luna.LunaService;
 import com.jumpserver.sdk.jumpserver.org.OrgService;
 import com.jumpserver.sdk.jumpserver.permissions.v2.PermissionService;
 import com.jumpserver.sdk.jumpserver.permissions.v3.PermissionV3Service;
+import com.jumpserver.sdk.jumpserver.role.v3.RoleService;
 import com.jumpserver.sdk.jumpserver.users.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -106,6 +107,11 @@ public class JMSClientImpl implements JMSClient {
     @Override
     public Map getHeaders() {
         return this.headers;
+    }
+
+    @Override
+    public RoleService roles() {
+        return Apis.getRoleServices();
     }
 
     public String getVersion() {

@@ -15,6 +15,8 @@ import com.jumpserver.sdk.jumpserver.permissions.v2.PermissionService;
 import com.jumpserver.sdk.jumpserver.permissions.v2.PermissionServiceImpl;
 import com.jumpserver.sdk.jumpserver.permissions.v3.PermissionV3Service;
 import com.jumpserver.sdk.jumpserver.permissions.v3.PermissionV3ServiceImpl;
+import com.jumpserver.sdk.jumpserver.role.v3.RoleService;
+import com.jumpserver.sdk.jumpserver.role.v3.RoleServiceImpl;
 import com.jumpserver.sdk.jumpserver.users.UserService;
 import com.jumpserver.sdk.jumpserver.users.UserServiceImpl;
 
@@ -35,6 +37,7 @@ public class DefaultAPIProvider implements APIProvider {
         bind(AssertsService.class, AssertsServiceImpl.class);
         bind(AssertsV3Service.class, AssertsV3ServiceImpl.class);
         bind(AssetNodeV3Service.class, AssetNodeV3ServiceImpl.class);
+        bind(RoleService.class, RoleServiceImpl.class);
     }
 
     @SuppressWarnings("unchecked")

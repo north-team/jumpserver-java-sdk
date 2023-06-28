@@ -4,6 +4,8 @@ import com.jumpserver.sdk.builder.ClientBuilder;
 import com.jumpserver.sdk.builder.JMSClient;
 import com.jumpserver.sdk.common.ClientConstants;
 import com.jumpserver.sdk.httpclient.build.Config;
+import com.jumpserver.sdk.jumpserver.role.v3.RoleService;
+import com.jumpserver.sdk.model.Role;
 import com.jumpserver.sdk.model.usergroup.UserGroup;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Before;
@@ -51,11 +53,15 @@ public class JMSClientTest {
             if (StringUtils.isBlank(orgId)) {
                 os = credentials.authenticate();
             } else {
-                os = credentials.header(ClientConstants.X_JMS_ORG, orgId).authenticate();
+                os = credentials.header(ClientConstants.X_JMS_ORG, "00000000-0000-0000-0000-000000000001").authenticate();
             }
             System.out.println("=======JMSClientTest======");
             System.out.println(os.getApiKey());
-
+            RoleService roles = os.roles();
+            List<Role> orgRoles = roles.selectOrgRoles();
+            System.out.println(orgRoles);
+            List<Role> selectSystemRoles = roles.selectSystemRoles();
+            System.out.println(selectSystemRoles);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -7,6 +7,7 @@ import com.jumpserver.sdk.jumpserver.luna.LunaService;
 import com.jumpserver.sdk.jumpserver.org.OrgService;
 import com.jumpserver.sdk.jumpserver.permissions.v2.PermissionService;
 import com.jumpserver.sdk.jumpserver.permissions.v3.PermissionV3Service;
+import com.jumpserver.sdk.jumpserver.role.v3.RoleService;
 import com.jumpserver.sdk.jumpserver.users.UserService;
 
 public class Apis {
@@ -55,4 +56,7 @@ public class Apis {
         return p;
     }
 
+    public static RoleService getRoleServices() {
+        return get(RoleService.class);
+    }
 }
