@@ -3,7 +3,7 @@ package jms.v3;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.jumpserver.sdk.common.ActionResponse;
-import com.jumpserver.sdk.jumpserver.assets.v3.Request.AssetRequest;
+import com.jumpserver.sdk.model.asset.v3.AssetRequest;
 import com.jumpserver.sdk.model.asset.v3.Asset;
 import com.jumpserver.sdk.model.asset.v3.DescribeAsset;
 import jms.v2.CommonBeforeTest;

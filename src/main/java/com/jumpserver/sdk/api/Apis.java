@@ -1,5 +1,6 @@
 package com.jumpserver.sdk.api;
 
+import com.jumpserver.sdk.jumpserver.account.v3.AssetAccountService;
 import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsService;
 import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
@@ -48,6 +49,10 @@ public class Apis {
 
     public static OrgService getOrgServices() {
         return get(OrgService.class);
+    }
+
+    public static AssetAccountService getAssetAccountServices() {
+        return get(AssetAccountService.class);
     }
 
     private static APIProvider initializeProvider() {

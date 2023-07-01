@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.jumpserver.sdk.common.ActionResponse;
 import com.jumpserver.sdk.common.BaseJmsService;
 import com.jumpserver.sdk.common.ClientConstants;
-import com.jumpserver.sdk.jumpserver.assets.v3.Request.AssetRequest;
+import com.jumpserver.sdk.model.asset.v3.AssetRequest;
 import com.jumpserver.sdk.model.asset.v3.Asset;
 import com.jumpserver.sdk.model.asset.v3.DescribeAsset;
 

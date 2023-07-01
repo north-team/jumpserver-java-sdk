@@ -1,4 +1,4 @@
-package com.jumpserver.sdk.jumpserver.assets.v3.Request;
+package com.jumpserver.sdk.model.account;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.jumpserver.sdk.common.Annotation.OnInvalidValidator;

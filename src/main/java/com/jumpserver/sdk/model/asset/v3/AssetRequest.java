@@ -1,9 +1,9 @@
-package com.jumpserver.sdk.jumpserver.assets.v3.Request;
+package com.jumpserver.sdk.model.asset.v3;
 
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.jumpserver.sdk.common.Annotation.PlatformValidator;
-import com.jumpserver.sdk.model.asset.v3.Protocol;
+import com.jumpserver.sdk.model.account.AssetAccount;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 
