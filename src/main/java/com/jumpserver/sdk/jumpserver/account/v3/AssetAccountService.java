@@ -10,5 +10,8 @@ public interface AssetAccountService {
 
     AssetAccount getAccountSecret(String accountId);
 
+    AssetAccount create(AssetAccountRequest asset);
+
     AssetAccount update(AssetAccountRequest asset);
+
 }

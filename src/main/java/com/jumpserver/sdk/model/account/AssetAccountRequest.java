@@ -16,6 +16,7 @@ public class AssetAccountRequest {
     private String name;
     @Length(message = "名称长度在1-128之间", max = 128)
     private String username;
+    private String asset;
     private boolean privileged;
     private String su_from;
     private SecretType secret_type;
@@ -46,6 +47,14 @@ public class AssetAccountRequest {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getAsset() {
+        return asset;
+    }
+
+    public void setAsset(String asset) {
+        this.asset = asset;
     }
 
     public boolean isPrivileged() {
