@@ -69,7 +69,7 @@ public class UserServiceImpl extends BaseJmsService implements UserService {
     @Override
     public List<UserGroup> userGroups() {
         // TODO ...
-        return get(UserGroup.class, uri(ClientConstants.USERGROUPS)).executeList();
+        return get(UserGroup.class, uri(ClientConstants.USERGROUPS)).header(ClientConstants.X_JMS_ORG, "00000000-0000-0000-0000-000000000000").executeList();
     }
 
     @Override
