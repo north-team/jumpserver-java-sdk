@@ -67,6 +67,8 @@ public final class ClientConstants {
 
     // permission
     public static final String ASSET_PERMISSIONS = BASE_URL + "/perms/asset-permissions/";
+    public static final String PERMISSION_USER_GROUP_RELATION = BASE_URL + "/perms/asset-permissions-user-groups-relations/";
+    public static final String PERMISSION_ASSET_RELATION = BASE_URL + "/perms/asset-permissions-assets-relations/";
 
     // luna
     public static final String LUNA_URL = "/luna/?login_to=";

@@ -106,9 +106,14 @@ public class JmsPermissionServiceTest extends CommonBeforeTest {
     }
 
     @Test
-    public void deleteAssetsPermission() {
-        ActionResponse delete = os.permissionsV3().deleteAssetsPermission("e6f3d2cd-d875-48db-805a-5e37bb83ce7a");
-        System.out.println(delete);
+    public void removePermissionAsset() {
+        os.users().list();
+        os.orgs().listOrg();
+        os.assetsV3().getAsserts(null);
+        os.permissionsV3().removePermissionAsset("030dcb45-578d-4462-bd48-3a4ff49c69b5", "030dcb45-578d-4462-bd48-3a4ff49c69b5");
+        os.permissionsV3().createPermissionAsset("030dcb45-578d-4462-bd48-3a4ff49c69b5", "030dcb45-578d-4462-bd48-3a4ff49c69b5");
+        os.permissionsV3().removePermissionUserGroup("030dcb45-578d-4462-bd48-3a4ff49c69b5", "811a7b4a-ba21-4427-ba73-a1d6e2851431");
+        os.permissionsV3().createPermissionUserGroup("030dcb45-578d-4462-bd48-3a4ff49c69b5", "811a7b4a-ba21-4427-ba73-a1d6e2851431");
     }
 
 }

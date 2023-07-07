@@ -25,36 +25,7 @@ public class JmsAssetsServiceTest extends CommonBeforeTest{
 
     @Test
     public void createAsset() {
-        String paramStr = "{\n" +
-                "    \"id\":\"bec0b999-2f6d-40f8-8345-570ad6659857\",\n" +
-                "    \"platform\": 1,\n" +
-                "        \"nodes\": [\n" +
-                "    \"1ecb988f-ded3-4b57-bc8f-808467abbe2f\",\n" +
-                "    \"c87155fb-f01f-4c12-b1ad-cff5d5d441c6\"\n" +
-                "    ],\n" +
-                "    \"protocols\": [\n" +
-                "        {\n" +
-                "            \"name\": \"ssh\",\n" +
-                "            \"port\": 22\n" +
-                "        }\n" +
-                "    ],\n" +
-                "    \"labels\": [],\n" +
-                "    \"is_active\": true,\n" +
-                "    \"name\": \"tyhtyhtyh\",\n" +
-                "    \"address\": \"111.111.111.118\",\n" +
-                "    \"accounts\": [\n" +
-                "        {\n" +
-                "            \"privileged\": true,\n" +
-                "            \"secret_type\": \"password\",\n" +
-                "            \"push_now\": false,\n" +
-                "            \"on_invalid\": \"error\",\n" +
-                "            \"is_active\": true,\n" +
-                "            \"name\": \"tyh2\",\n" +
-                "            \"username\": \"tyh2\",\n" +
-                "            \"secret\": \"QDYZcqr2Ud4HBtKMEOHf4wRYak02zDsn5UEz/Hsi3uDlF3nfbdxyfXooHN7CQ6lgZfkuUFKLw8BYHl3Q+y45ebKBRu7fqzFB0UdxXIpwc/aHjwCfaGRFIiivK1K8ucZ+emhAi78JpRCFI10MJKutEABAgK19xzYyDMBucN0MRt8=:1viS34HPOlJ9dNmLFnQE9w==\",\n" +
-                "            \"comment\": \"this is comment\"        }\n" +
-                "    ]\n" +
-                "}";
+        String paramStr = "{\"address\":\"10.1.13.87\",\"id\":\"113d96fc-e0f7-415e-9e1a-c39632b9c089\",\"is_active\":true,\"name\":\"北区-张金力-跳板机-长期使用-勿关勿删\",\"nodes\":[\"811a7b4a-ba21-4427-ba73-a1d6e2851431\"],\"platform\":5,\"protocols\":[{\"name\":\"rdp\",\"port\":22}]}";
         AssetRequest assetRequest = JSON.parseObject(paramStr, AssetRequest.class);
         Asset assetResult = os.assetsV3().create(assetRequest);
         String sss = "sss";

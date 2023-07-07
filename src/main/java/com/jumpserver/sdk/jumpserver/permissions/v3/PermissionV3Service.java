@@ -22,4 +22,12 @@ public interface PermissionV3Service {
 
     ActionResponse deleteAssetsPermission(String permissionId);
 
+    void createPermissionAsset(String permissionId, String assetId);
+
+    void removePermissionAsset(String permissionId, String assetId);
+
+    void createPermissionUserGroup(String permissionId, String userGroupId);
+
+    void removePermissionUserGroup(String permissionId, String userGroupId);
+
 }

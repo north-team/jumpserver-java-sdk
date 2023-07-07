@@ -1,6 +1,7 @@
 package com.jumpserver.sdk.jumpserver.permissions.v3;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.jumpserver.sdk.common.ActionResponse;
 import com.jumpserver.sdk.common.BaseJmsService;
 import com.jumpserver.sdk.common.ClientConstants;
@@ -45,5 +46,50 @@ public class PermissionV3ServiceImpl extends BaseJmsService implements Permissio
     public ActionResponse deleteAssetsPermission(String permissionId) {
         checkNotNull(permissionId);
         return deleteWithResponse(ClientConstants.ASSET_PERMISSIONS, permissionId, "/").execute();
+    }
+
+    @Override
+    public void createPermissionAsset(String permissionId, String assetId) {
+        checkNotNull(permissionId);
+        checkNotNull(assetId);
+        JSONObject param = new JSONObject();
+        param.put("assetpermission", permissionId);
+        param.put("asset", assetId);
+        delete(AssetsPermission.class, uri(ClientConstants.PERMISSION_ASSET_RELATION))
+                .param("assetpermission", permissionId)
+                .param("asset", assetId)
+                .execute();
+    }
+
+    @Override
+    public void removePermissionAsset(String permissionId, String assetId) {
+        checkNotNull(permissionId);
+        checkNotNull(assetId);
+        delete(AssetsPermission.class, uri(ClientConstants.PERMISSION_ASSET_RELATION))
+                .param("assetpermission", permissionId)
+                .param("asset", assetId)
+                .execute();
+    }
+
+    @Override
+    public void createPermissionUserGroup(String permissionId, String userGroupId) {
+        checkNotNull(permissionId);
+        checkNotNull(userGroupId);
+        post(AssetsPermission.class, uri(ClientConstants.PERMISSION_USER_GROUP_RELATION))
+                .param("assetpermission", permissionId)
+                .param("usergroup", userGroupId)
+                .execute();
+    }
+
+    @Override
+    public void removePermissionUserGroup(String permissionId, String userGroupId) {
+        checkNotNull(permissionId);
+        checkNotNull(userGroupId);
+        JSONObject param = new JSONObject();
+        param.put("assetpermission", permissionId);
+        param.put("usergroup", userGroupId);
+        delete(AssetsPermission.class, uri(ClientConstants.PERMISSION_USER_GROUP_RELATION))
+                .json(param.toJSONString())
+                .execute();
     }
 }
