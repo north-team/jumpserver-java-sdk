@@ -1,10 +1,12 @@
 package com.jumpserver.sdk.jumpserver.users;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.jumpserver.sdk.common.ActionResponse;
 import com.jumpserver.sdk.common.BaseJmsService;
 import com.jumpserver.sdk.common.ClientConstants;
 import com.jumpserver.sdk.model.user.User;
+import com.jumpserver.sdk.model.user.UserUserGroupRelation;
 import com.jumpserver.sdk.model.usergroup.UserGroup;
 import com.jumpserver.sdk.model.common.MapEntity;
 
@@ -87,11 +89,40 @@ public class UserServiceImpl extends BaseJmsService implements UserService {
     }
 
     @Override
+    public void invite(List<String> userIds, List<String> orgRoles) {
+        checkNotNull(userIds);
+        checkNotNull(orgRoles);
+        JSONObject param = new JSONObject();
+        param.put("users", userIds);
+        param.put("org_roles", orgRoles);
+        ActionResponse response = post(ActionResponse.class, uri(ClientConstants.USERS_INTO_ORG))
+                .json(JSON.toJSONString(param))
+                .execute();
+    }
+
+    @Override
+    public List<UserUserGroupRelation> intoUserGroup(List<UserUserGroupRelation> userUserGroupRelations) {
+        checkNotNull(userUserGroupRelations);
+        return (List<UserUserGroupRelation>)post(List.class, uri(ClientConstants.USERS_INTO_USER_GROUP))
+                .json(JSON.toJSONString(userUserGroupRelations))
+                .execute();
+    }
+
+    @Override
     public UserGroup updateUserGroup(UserGroup usergroup) {
         checkNotNull(usergroup);
         return patch(UserGroup.class, uri(ClientConstants.USERGROUPS), usergroup.getId(), "/")
                 .json(JSON.toJSONString(usergroup))
                 .execute();
+    }
+
+    @Override
+    public ActionResponse removeUserGroupByUserId(String userId, String userGroupId) {
+        checkNotNull(userId);
+        checkNotNull(userGroupId);
+        String usersIntoUserGroupDelete =
+                ClientConstants.USERS_INTO_USER_GROUP + "?user=" + userId + "&usergroup=" + userGroupId;
+        return deleteWithResponse(usersIntoUserGroupDelete).execute();
     }
 
 }

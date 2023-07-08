@@ -1,6 +1,7 @@
 package com.jumpserver.sdk.jumpserver.users;
 
 import com.jumpserver.sdk.common.ActionResponse;
+import com.jumpserver.sdk.model.user.UserUserGroupRelation;
 import com.jumpserver.sdk.model.usergroup.UserGroup;
 import com.jumpserver.sdk.model.user.User;
 
@@ -31,5 +32,11 @@ public interface UserService {
     UserGroup createUserGroup(UserGroup usergroup);
 
     ActionResponse deleteUserGroup(String groupId);
+
+    void invite(List<String> userIds, List<String> orgRoles);
+
+    List<UserUserGroupRelation> intoUserGroup(List<UserUserGroupRelation> userUserGroupRelations);
+
+    ActionResponse removeUserGroupByUserId(String userId, String userGroupId);
 
 }

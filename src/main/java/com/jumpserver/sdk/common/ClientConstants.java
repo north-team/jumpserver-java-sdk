@@ -19,6 +19,8 @@ public final class ClientConstants {
     public static final String USERGROUPS = BASE_URL + "/users/groups/";
     public static final String USER_PASSWORD_RESET = BASE_URL + "/users/users/{id}/password/";
     public static final String USER_CONNECTION_TOKEN = BASE_URL + "/users/connection-token/";
+    public static final String USERS_INTO_ORG = BASE_URL + "/users/users/invite/";
+    public static final String USERS_INTO_USER_GROUP = BASE_URL + "/users/users-groups-relations/";
 
     // assets
     public static final String NODES = BASE_URL + "/assets/nodes/";
