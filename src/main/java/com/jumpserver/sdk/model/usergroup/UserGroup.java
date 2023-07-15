@@ -18,6 +18,8 @@ public class UserGroup {
 
     private String comment;
 
+    private String orgId;
+
     public String getId() {
         return id;
     }
@@ -74,4 +76,11 @@ public class UserGroup {
         this.comment = comment;
     }
 
+    public String getOrgId() {
+        return orgId;
+    }
+
+    public void setOrgId(String orgId) {
+        this.orgId = orgId;
+    }
 }
