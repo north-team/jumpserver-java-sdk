@@ -6,6 +6,8 @@ import com.jumpserver.sdk.common.ClientConstants;
 import com.jumpserver.sdk.model.account.AssetAccount;
 import com.jumpserver.sdk.model.account.AssetAccountRequest;
 
+import java.util.List;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
@@ -16,6 +18,11 @@ public class AssetAccountServiceImpl extends BaseJmsService implements AssetAcco
     public AssetAccount getAccountSecret(String accountId) {
         checkNotNull(accountId);
         return get(AssetAccount.class, ClientConstants.ASSET_ACCOUNT_SECRET, accountId, "/").execute();
+    }
+
+    @Override
+    public List<AssetAccount> list() {
+        return get(AssetAccount.class, ClientConstants.ASSET_ACCOUNT).executeList();
     }
 
     @Override

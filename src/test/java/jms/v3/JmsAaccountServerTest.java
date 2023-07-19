@@ -7,6 +7,8 @@ import com.jumpserver.sdk.model.account.SecretType;
 import jms.v2.CommonBeforeTest;
 import org.junit.Test;
 
+import java.util.List;
+
 
 /**
  * @author : houchen
@@ -48,6 +50,12 @@ public class JmsAaccountServerTest extends CommonBeforeTest {
     public void getAccount() {
         String accountId = "a917134b-7093-4241-b1a7-9c70a3d3e9c6";
         AssetAccount asset = os.assetAccountV3().getAccountSecret(accountId);
+        System.out.println(JSONObject.toJSONString(asset));
+    }
+
+    @Test
+    public void listAccount() {
+        List<AssetAccount> asset = os.assetAccountV3().list();
         System.out.println(JSONObject.toJSONString(asset));
     }
 }

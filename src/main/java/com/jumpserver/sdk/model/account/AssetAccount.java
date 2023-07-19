@@ -3,6 +3,7 @@ package com.jumpserver.sdk.model.account;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.jumpserver.sdk.common.Annotation.OnInvalidValidator;
 import com.jumpserver.sdk.common.Annotation.SecretTypeValidator;
+import com.jumpserver.sdk.model.asset.v3.Asset;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
 
@@ -25,7 +26,7 @@ public class AssetAccount {
     private String comment;
     @JSONField(name = "su_from")
     private String suFrom;
-    private String asset;
+    private Asset asset;
     @Range(message = "版本号需要在-2147483648到2147483647之间", min = -2147483648, max = 2147483647)
     private int version;
     private String template;
@@ -103,11 +104,11 @@ public class AssetAccount {
         this.suFrom = suFrom;
     }
 
-    public String getAsset() {
+    public Asset getAsset() {
         return asset;
     }
 
-    public void setAsset(String asset) {
+    public void setAsset(Asset asset) {
         this.asset = asset;
     }
 
