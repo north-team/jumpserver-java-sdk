@@ -68,7 +68,6 @@ public class OrgServiceImpl extends BaseJmsService implements OrgService {
 
     @Override
     public OrgUsers removeUsers(OrgUsers orgusers) {
-        checkNotNull(orgusers.getOrg_roles());
         checkNotNull(orgusers.getUser());
         String url = ClientConstants.REMOVE_USERS.replace("{user_id}", orgusers.getUser());
         return this.post(OrgUsers.class, new String[]{url}).execute();
