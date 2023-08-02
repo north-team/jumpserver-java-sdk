@@ -5,6 +5,7 @@ import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsService;
 import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
 import com.jumpserver.sdk.jumpserver.luna.LunaService;
+import com.jumpserver.sdk.jumpserver.luna.V3.LunaV3Service;
 import com.jumpserver.sdk.jumpserver.org.OrgService;
 import com.jumpserver.sdk.jumpserver.permissions.v2.PermissionService;
 import com.jumpserver.sdk.jumpserver.permissions.v3.PermissionV3Service;
@@ -45,6 +46,10 @@ public class Apis {
 
     public static LunaService getLunaServices() {
         return get(LunaService.class);
+    }
+
+    public static LunaV3Service getLunaV3Services() {
+        return get(LunaV3Service.class);
     }
 
     public static OrgService getOrgServices() {

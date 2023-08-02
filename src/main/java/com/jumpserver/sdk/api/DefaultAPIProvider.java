@@ -11,6 +11,8 @@ import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
 import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3ServiceImpl;
 import com.jumpserver.sdk.jumpserver.luna.LunaService;
 import com.jumpserver.sdk.jumpserver.luna.LunaServiceImpl;
+import com.jumpserver.sdk.jumpserver.luna.V3.LunaV3Service;
+import com.jumpserver.sdk.jumpserver.luna.V3.LunaV3ServiceImpl;
 import com.jumpserver.sdk.jumpserver.org.OrgService;
 import com.jumpserver.sdk.jumpserver.org.OrgServiceImpl;
 import com.jumpserver.sdk.jumpserver.permissions.v2.PermissionService;
@@ -41,6 +43,7 @@ public class DefaultAPIProvider implements APIProvider {
         bind(AssetNodeV3Service.class, AssetNodeV3ServiceImpl.class);
         bind(RoleService.class, RoleServiceImpl.class);
         bind(AssetAccountService.class, AssetAccountServiceImpl.class);
+        bind(LunaV3Service.class, LunaV3ServiceImpl.class);
     }
 
     @SuppressWarnings("unchecked")

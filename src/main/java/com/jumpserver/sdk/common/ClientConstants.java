@@ -76,6 +76,7 @@ public final class ClientConstants {
     public static final String LUNA_URL = "/luna/?login_to=";
     public static final String LUNA_SSO_URL = BASE_URL + "/authentication/sso/login-url/";
     public static final String LUNA_CONNECT_URL = "/luna/connect/?system={system}&token={token}";
+    public static final String LUNA_CONNECT_V3_URL = "/luna/connect?login_to=";
 
     //user role
     public static final String RBAC_SYSTEM_ROLES = BASE_URL + "/rbac/system-roles/";

@@ -5,6 +5,7 @@ import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsService;
 import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
 import com.jumpserver.sdk.jumpserver.luna.LunaService;
+import com.jumpserver.sdk.jumpserver.luna.V3.LunaV3Service;
 import com.jumpserver.sdk.jumpserver.org.OrgService;
 import com.jumpserver.sdk.jumpserver.permissions.v2.PermissionService;
 import com.jumpserver.sdk.jumpserver.permissions.v3.PermissionV3Service;
@@ -69,6 +70,13 @@ public interface JMSClient {
      * @return
      */
     LunaService luna();
+
+    /**
+     * luna 终端界面
+     * V3 版本
+     * @return
+     */
+    LunaV3Service lunaV3();
 
     /**
      * permissions 授权规则
