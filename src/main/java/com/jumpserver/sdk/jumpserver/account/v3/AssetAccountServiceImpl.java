@@ -37,4 +37,10 @@ public class AssetAccountServiceImpl extends BaseJmsService implements AssetAcco
         checkNotNull(assetAccount);
         return patch(AssetAccount.class, ClientConstants.ASSET_ACCOUNT, assetAccount.getId(), "/").json(JSON.toJSONString(assetAccount)).execute();
     }
+
+    @Override
+    public void delete(String assetAccountId) {
+        checkNotNull(assetAccountId);
+        delete(null, ClientConstants.ASSET_ACCOUNT, assetAccountId, "/").execute();
+    }
 }

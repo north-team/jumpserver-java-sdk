@@ -18,4 +18,6 @@ public interface AssetAccountService {
 
     AssetAccount update(AssetAccountRequest asset);
 
+    void delete(String assetAccountId);
+
 }
