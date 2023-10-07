@@ -107,13 +107,15 @@ public class JmsPermissionServiceTest extends CommonBeforeTest {
 
     @Test
     public void removePermissionAsset() {
-        os.users().list();
-        os.orgs().listOrg();
-        os.assetsV3().getAsserts(null);
-        os.permissionsV3().removePermissionAsset("030dcb45-578d-4462-bd48-3a4ff49c69b5", "030dcb45-578d-4462-bd48-3a4ff49c69b5");
-        os.permissionsV3().createPermissionAsset("030dcb45-578d-4462-bd48-3a4ff49c69b5", "030dcb45-578d-4462-bd48-3a4ff49c69b5");
-        os.permissionsV3().removePermissionUserGroup("030dcb45-578d-4462-bd48-3a4ff49c69b5", "811a7b4a-ba21-4427-ba73-a1d6e2851431");
-        os.permissionsV3().createPermissionUserGroup("030dcb45-578d-4462-bd48-3a4ff49c69b5", "811a7b4a-ba21-4427-ba73-a1d6e2851431");
+        String permissionId = "7bf91adc-21f7-4d65-a729-210821b40fef";
+//        String userId = "f0a96c87-80b1-45da-8b18-9132c985e576";
+        String userId = "20cc575b-af97-4fb3-a404-6a69a5a9691e";
+//        os.permissionsV3().removePermissionUser(permissionId, userId);
+        os.permissionsV3().createPermissionUser(permissionId, userId);
+//        os.permissionsV3().removePermissionAsset("030dcb45-578d-4462-bd48-3a4ff49c69b5", "030dcb45-578d-4462-bd48-3a4ff49c69b5");
+//        os.permissionsV3().createPermissionAsset("030dcb45-578d-4462-bd48-3a4ff49c69b5", "030dcb45-578d-4462-bd48-3a4ff49c69b5");
+//        os.permissionsV3().removePermissionUserGroup("030dcb45-578d-4462-bd48-3a4ff49c69b5", "811a7b4a-ba21-4427-ba73-a1d6e2851431");
+//        os.permissionsV3().createPermissionUserGroup("030dcb45-578d-4462-bd48-3a4ff49c69b5", "811a7b4a-ba21-4427-ba73-a1d6e2851431");
     }
 
 }

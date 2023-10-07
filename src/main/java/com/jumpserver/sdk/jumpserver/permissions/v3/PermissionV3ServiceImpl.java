@@ -1,6 +1,7 @@
 package com.jumpserver.sdk.jumpserver.permissions.v3;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.jumpserver.sdk.common.ActionResponse;
 import com.jumpserver.sdk.common.BaseJmsService;
@@ -75,21 +76,45 @@ public class PermissionV3ServiceImpl extends BaseJmsService implements Permissio
     public void createPermissionUserGroup(String permissionId, String userGroupId) {
         checkNotNull(permissionId);
         checkNotNull(userGroupId);
+        JSONObject permission = new JSONObject();
+        permission.put("assetpermission", permissionId);
+        permission.put("usergroup", userGroupId);
+        JSONArray param = new JSONArray();
+        param.add(permission);
         post(AssetsPermission.class, uri(ClientConstants.PERMISSION_USER_GROUP_RELATION))
-                .param("assetpermission", permissionId)
-                .param("usergroup", userGroupId)
-                .execute();
+                .json(JSON.toJSONString(param))
+                .executeList();
     }
 
     @Override
     public void removePermissionUserGroup(String permissionId, String userGroupId) {
         checkNotNull(permissionId);
         checkNotNull(userGroupId);
-        JSONObject param = new JSONObject();
-        param.put("assetpermission", permissionId);
-        param.put("usergroup", userGroupId);
-        delete(AssetsPermission.class, uri(ClientConstants.PERMISSION_USER_GROUP_RELATION))
-                .json(param.toJSONString())
+        delete(AssetsPermission.class, ClientConstants.PERMISSION_USER_GROUP_RELATION, "?assetpermission=", permissionId,
+                "&usergroup=", userGroupId)
+                .execute();
+    }
+
+    @Override
+    public void createPermissionUser(String permissionId, String userId) {
+        checkNotNull(permissionId);
+        checkNotNull(userId);
+        JSONObject permission = new JSONObject();
+        permission.put("assetpermission", permissionId);
+        permission.put("user", userId);
+        JSONArray param = new JSONArray();
+        param.add(permission);
+        post(AssetsPermission.class, ClientConstants.PERMISSION_USER_RELATION)
+                .json(JSON.toJSONString(param))
+                .executeList();
+    }
+
+    @Override
+    public void removePermissionUser(String permissionId, String userId) {
+        checkNotNull(permissionId);
+        checkNotNull(userId);
+        delete(AssetsPermission.class, ClientConstants.PERMISSION_USER_RELATION, "?assetpermission=", permissionId,
+                "&usergroup=", userId)
                 .execute();
     }
 }

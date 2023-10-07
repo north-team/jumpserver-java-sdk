@@ -30,4 +30,8 @@ public interface PermissionV3Service {
 
     void removePermissionUserGroup(String permissionId, String userGroupId);
 
+    void createPermissionUser(String permissionId, String userId);
+
+    void removePermissionUser(String permissionId, String userId);
+
 }
