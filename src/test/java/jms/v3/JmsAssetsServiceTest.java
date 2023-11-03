@@ -6,6 +6,7 @@ import com.jumpserver.sdk.common.ActionResponse;
 import com.jumpserver.sdk.model.asset.v3.AssetRequest;
 import com.jumpserver.sdk.model.asset.v3.Asset;
 import com.jumpserver.sdk.model.asset.v3.DescribeAsset;
+import com.jumpserver.sdk.model.asset.v3.Platform;
 import jms.v2.CommonBeforeTest;
 import org.junit.Test;
 
@@ -29,6 +30,12 @@ public class JmsAssetsServiceTest extends CommonBeforeTest{
         AssetRequest assetRequest = JSON.parseObject(paramStr, AssetRequest.class);
         Asset assetResult = os.assetsV3().create(assetRequest);
         String sss = "sss";
+    }
+
+    @Test
+    public void getPaltform() {
+        List<Platform> platforms = os.assetsV3().listPlatforms();
+        System.out.println(platforms);
     }
 
     @Test

@@ -4,6 +4,7 @@ import com.jumpserver.sdk.common.ActionResponse;
 import com.jumpserver.sdk.model.asset.v3.AssetRequest;
 import com.jumpserver.sdk.model.asset.v3.Asset;
 import com.jumpserver.sdk.model.asset.v3.DescribeAsset;
+import com.jumpserver.sdk.model.asset.v3.Platform;
 
 import java.util.List;
 
@@ -19,4 +20,6 @@ public interface AssertsV3Service {
     Asset create(AssetRequest asset);
 
     ActionResponse delete(String assetId);
+
+    List<Platform> listPlatforms();
 }

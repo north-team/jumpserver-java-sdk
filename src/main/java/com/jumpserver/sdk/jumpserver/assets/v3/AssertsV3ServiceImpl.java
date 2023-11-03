@@ -7,6 +7,7 @@ import com.jumpserver.sdk.common.ClientConstants;
 import com.jumpserver.sdk.model.asset.v3.AssetRequest;
 import com.jumpserver.sdk.model.asset.v3.Asset;
 import com.jumpserver.sdk.model.asset.v3.DescribeAsset;
+import com.jumpserver.sdk.model.asset.v3.Platform;
 
 import java.util.List;
 
@@ -39,5 +40,10 @@ public class AssertsV3ServiceImpl extends BaseJmsService implements AssertsV3Ser
     public ActionResponse delete(String assetId) {
         checkNotNull(assetId);
         return deleteWithResponse(ClientConstants.ASSETSV3, assetId, "/").execute();
+    }
+
+    @Override
+    public List<Platform> listPlatforms() {
+        return get(Platform.class, ClientConstants.PLATFORM).executeList();
     }
 }
