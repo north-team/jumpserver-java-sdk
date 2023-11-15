@@ -1,5 +1,10 @@
 package com.jumpserver.sdk.model.permission.v3;
 
+import com.jumpserver.sdk.model.common.IdName;
+import com.jumpserver.sdk.model.common.LabelValue;
+
+import java.util.List;
+
 public class AssetsPermission {
     private String id;
 
@@ -17,26 +22,21 @@ public class AssetsPermission {
 
     private String comment;
 
-    private String[] user_groups;
+    private List<IdName> user_groups;
 
-    private String[] users;
+    private List<IdName> users;
 
-    private String[] nodes;
+    private List<IdName> nodes;
 
-    private String[] assets;
+    private List<IdName> assets;
 
-    private String[] system_users;
+    private List<IdName> system_users;
 
-    private String[] actions;
+    private List<LabelValue> actions;
 
     private String[] accounts;
 
-    public String[] getAccounts() {
-        return accounts;
-    }
-
-    public void setAccounts(String[] accounts) {
-        this.accounts = accounts;
+    public AssetsPermission() {
     }
 
     public String getId() {
@@ -103,51 +103,59 @@ public class AssetsPermission {
         this.comment = comment;
     }
 
-    public String[] getUser_groups() {
+    public List<IdName> getUser_groups() {
         return user_groups;
     }
 
-    public void setUser_groups(String[] user_groups) {
+    public void setUser_groups(List<IdName> user_groups) {
         this.user_groups = user_groups;
     }
 
-    public String[] getUsers() {
+    public List<IdName> getUsers() {
         return users;
     }
 
-    public void setUsers(String[] users) {
+    public void setUsers(List<IdName> users) {
         this.users = users;
     }
 
-    public String[] getNodes() {
+    public List<IdName> getNodes() {
         return nodes;
     }
 
-    public void setNodes(String[] nodes) {
+    public void setNodes(List<IdName> nodes) {
         this.nodes = nodes;
     }
 
-    public String[] getAssets() {
+    public List<IdName> getAssets() {
         return assets;
     }
 
-    public void setAssets(String[] assets) {
+    public void setAssets(List<IdName> assets) {
         this.assets = assets;
     }
 
-    public String[] getSystem_users() {
+    public List<IdName> getSystem_users() {
         return system_users;
     }
 
-    public void setSystem_users(String[] system_users) {
+    public void setSystem_users(List<IdName> system_users) {
         this.system_users = system_users;
     }
 
-    public String[] getActions() {
+    public List<LabelValue> getActions() {
         return actions;
     }
 
-    public void setActions(String[] actions) {
+    public void setActions(List<LabelValue> actions) {
         this.actions = actions;
+    }
+
+    public String[] getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(String[] accounts) {
+        this.accounts = accounts;
     }
 }
