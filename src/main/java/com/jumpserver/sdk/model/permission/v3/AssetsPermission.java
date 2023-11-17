@@ -10,6 +10,8 @@ public class AssetsPermission {
 
     private String name;
 
+    private String org_id;
+
     private Boolean is_active;
 
     private String date_expired;
@@ -53,6 +55,14 @@ public class AssetsPermission {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getOrg_id() {
+        return org_id;
+    }
+
+    public void setOrg_id(String org_id) {
+        this.org_id = org_id;
     }
 
     public Boolean getIs_active() {
