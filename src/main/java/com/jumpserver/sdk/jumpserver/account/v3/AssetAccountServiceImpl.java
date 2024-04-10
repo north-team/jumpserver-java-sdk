@@ -33,6 +33,12 @@ public class AssetAccountServiceImpl extends BaseJmsService implements AssetAcco
     }
 
     @Override
+    public List<AssetAccount> createByAccountTemplate(List<AssetAccountRequest> assets) {
+        checkNotNull(assets);
+        return post(AssetAccount.class, ClientConstants.ASSET_ACCOUNT).json(JSON.toJSONString(assets)).executeList();
+    }
+
+    @Override
     public AssetAccount update(AssetAccountRequest assetAccount) {
         checkNotNull(assetAccount);
         return patch(AssetAccount.class, ClientConstants.ASSET_ACCOUNT, assetAccount.getId(), "/").json(JSON.toJSONString(assetAccount)).execute();

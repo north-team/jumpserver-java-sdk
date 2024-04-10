@@ -24,6 +24,7 @@ public class AssetAccountRequest {
     private boolean is_active;
     private String comment;
     private String secret;
+    private String template;
 
     public String getId() {
         return id;
@@ -111,5 +112,13 @@ public class AssetAccountRequest {
 
     public void setSecret(String secret) {
         this.secret = secret;
+    }
+
+    public String getTemplate() {
+        return template;
+    }
+
+    public void setTemplate(String template) {
+        this.template = template;
     }
 }

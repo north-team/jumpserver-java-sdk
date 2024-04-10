@@ -31,6 +31,9 @@ public final class ClientConstants {
     public static final String ASSET_ACCOUNT_DELETE = BASE_URL + "/accounts/accounts/{id}";
     public static final String ASSET_ACCOUNT_SECRET = BASE_URL + "/accounts/account-secrets/";
 
+    //account-templates
+    public static final String ACCOUNT_TEMPLATE = BASE_URL + "/accounts/account-templates/";
+
     // nodes
     public static final String ASSETS = BASE_URL + "/assets/assets/";
     public static final String ASSETSV3 = BASE_URL + "/assets/hosts/";

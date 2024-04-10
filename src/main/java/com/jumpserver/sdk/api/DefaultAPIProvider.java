@@ -1,6 +1,8 @@
 package com.jumpserver.sdk.api;
 
 import com.google.common.collect.Maps;
+import com.jumpserver.sdk.jumpserver.account.v3.AccountTemplateService;
+import com.jumpserver.sdk.jumpserver.account.v3.AccountTemplateServiceImpl;
 import com.jumpserver.sdk.jumpserver.account.v3.AssetAccountService;
 import com.jumpserver.sdk.jumpserver.account.v3.AssetAccountServiceImpl;
 import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
@@ -44,6 +46,7 @@ public class DefaultAPIProvider implements APIProvider {
         bind(RoleService.class, RoleServiceImpl.class);
         bind(AssetAccountService.class, AssetAccountServiceImpl.class);
         bind(LunaV3Service.class, LunaV3ServiceImpl.class);
+        bind(AccountTemplateService.class, AccountTemplateServiceImpl.class);
     }
 
     @SuppressWarnings("unchecked")

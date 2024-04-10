@@ -16,6 +16,8 @@ public interface AssetAccountService {
 
     AssetAccount create(AssetAccountRequest asset);
 
+    List<AssetAccount> createByAccountTemplate(List<AssetAccountRequest> assets);
+
     AssetAccount update(AssetAccountRequest asset);
 
     void delete(String assetAccountId);

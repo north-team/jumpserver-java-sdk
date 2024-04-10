@@ -3,6 +3,7 @@ package com.jumpserver.sdk.builder;
 import com.alibaba.fastjson.JSONObject;
 import com.jumpserver.sdk.api.Apis;
 import com.jumpserver.sdk.httpclient.build.Config;
+import com.jumpserver.sdk.jumpserver.account.v3.AccountTemplateService;
 import com.jumpserver.sdk.jumpserver.account.v3.AssetAccountService;
 import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsService;
@@ -124,6 +125,11 @@ public class JMSClientImpl implements JMSClient {
     @Override
     public RoleService roles() {
         return Apis.getRoleServices();
+    }
+
+    @Override
+    public AccountTemplateService accountTemplateV3() {
+        return Apis.getAccountTemplateServices();
     }
 
     public String getVersion() {
