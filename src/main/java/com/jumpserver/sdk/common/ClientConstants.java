@@ -2,7 +2,7 @@ package com.jumpserver.sdk.common;
 
 public final class ClientConstants {
 
-    private static final String BASE_URL = "/api/v1";
+    public static final String BASE_URL = "/api/v1";
 
     public static final String HEADER_AUTHORIZATION = "Authorization";
     public static final String X_JMS_ORG = "x-jms-org";
@@ -28,6 +28,7 @@ public final class ClientConstants {
     public static final String NODES_ASSETS = BASE_URL + "/assets/nodes/{id}/assets/";
 
     public static final String ASSET_ACCOUNT = BASE_URL + "/accounts/accounts/";
+    public static final String ASSET_ACCOUNT_PAGE = BASE_URL + "/accounts/accounts/?offset=0&limit=100";
     public static final String ASSET_ACCOUNT_DELETE = BASE_URL + "/accounts/accounts/{id}";
     public static final String ASSET_ACCOUNT_SECRET = BASE_URL + "/accounts/account-secrets/";
 

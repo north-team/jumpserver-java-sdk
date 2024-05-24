@@ -6,6 +6,7 @@ import com.jumpserver.sdk.common.ClientConstants;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Before;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -22,8 +23,9 @@ public class CommonBeforeTest {
     public void initClient() {
         try {
             Properties properties = new Properties();
-            InputStream resourceAsStream = this.getClass().getResourceAsStream("/credential.property");
-            properties.load(resourceAsStream);
+//            InputStream resourceAsStream = this.getClass().getResourceAsStream("/credential.property");
+            FileReader credentialFileReader = new FileReader("/opt/fit2cloud/credential.properties");
+            properties.load(credentialFileReader);
             endPoint = (String) properties.get("endPoint");
             keyId = (String) properties.get("keyId");
             keySecret = (String) properties.get("keySecret");

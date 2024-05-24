@@ -14,6 +14,8 @@ public interface AssetAccountService {
 
     List<AssetAccount> list();
 
+    List<AssetAccount> listPage();
+
     AssetAccount create(AssetAccountRequest asset);
 
     List<AssetAccount> createByAccountTemplate(List<AssetAccountRequest> assets);

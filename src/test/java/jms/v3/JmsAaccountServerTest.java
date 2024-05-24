@@ -1,6 +1,7 @@
 package jms.v3;
 
 import com.alibaba.fastjson.JSONObject;
+import com.jumpserver.sdk.common.ClientConstants;
 import com.jumpserver.sdk.model.account.AssetAccount;
 import com.jumpserver.sdk.model.account.AssetAccountRequest;
 import com.jumpserver.sdk.model.account.SecretType;
@@ -58,4 +59,18 @@ public class JmsAaccountServerTest extends CommonBeforeTest {
         List<AssetAccount> asset = os.assetAccountV3().list();
         System.out.println(JSONObject.toJSONString(asset));
     }
+
+
+    @Test
+    public void listAccountPage() {
+        List<AssetAccount> asset = os.assetAccountV3().listPage();
+        System.out.println(JSONObject.toJSONString(asset));
+
+
+//        String next =  "http://XX.XX.XXX/api/v1/users/groups/?display=1&draw=1&limit=15&offset=30";
+//        next = next.substring(next.indexOf(ClientConstants.BASE_URL), next.length());
+//        System.out.println(next);
+    }
+
+
 }

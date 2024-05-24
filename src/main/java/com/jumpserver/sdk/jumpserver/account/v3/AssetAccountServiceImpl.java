@@ -5,7 +5,13 @@ import com.jumpserver.sdk.common.BaseJmsService;
 import com.jumpserver.sdk.common.ClientConstants;
 import com.jumpserver.sdk.model.account.AssetAccount;
 import com.jumpserver.sdk.model.account.AssetAccountRequest;
+import com.jumpserver.sdk.model.common.PageResponse;
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -14,6 +20,9 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * @author : houchen
  */
 public class AssetAccountServiceImpl extends BaseJmsService implements AssetAccountService {
+
+    private static Logger logger = LoggerFactory.getLogger(AssetAccountServiceImpl.class);
+
     @Override
     public AssetAccount getAccountSecret(String accountId) {
         checkNotNull(accountId);
@@ -23,6 +32,25 @@ public class AssetAccountServiceImpl extends BaseJmsService implements AssetAcco
     @Override
     public List<AssetAccount> list() {
         return get(AssetAccount.class, ClientConstants.ASSET_ACCOUNT).executeList();
+    }
+
+    @Override
+    public List<AssetAccount> listPage(){
+        List<AssetAccount> allAccounts = new ArrayList<>();
+        String requestUrl = ClientConstants.ASSET_ACCOUNT_PAGE;
+        while (StringUtils.isNotBlank(requestUrl)) {
+            PageResponse<AssetAccount> pageResponse = get(PageResponse.class, requestUrl).execute();
+            allAccounts.addAll(pageResponse.getResults());
+            requestUrl = pageResponse.getNext();
+            if (StringUtils.isNotBlank(requestUrl) && requestUrl.contains(ClientConstants.BASE_URL)){
+               // next =  http://XX.XX.XXX/api/v1/users/groups/?limit=15&offset=30
+                requestUrl = requestUrl.substring(requestUrl.indexOf(ClientConstants.BASE_URL), requestUrl.length());
+            }else {
+                logger.warn("异常的 JumpServer 返回地址：{}", requestUrl);
+                requestUrl = null;
+            }
+        }
+        return allAccounts;
     }
 
     @Override
