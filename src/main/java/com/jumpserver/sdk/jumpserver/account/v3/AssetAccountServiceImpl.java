@@ -5,12 +5,11 @@ import com.jumpserver.sdk.common.BaseJmsService;
 import com.jumpserver.sdk.common.ClientConstants;
 import com.jumpserver.sdk.model.account.AssetAccount;
 import com.jumpserver.sdk.model.account.AssetAccountRequest;
-import com.jumpserver.sdk.model.common.PageResponse;
+import com.jumpserver.sdk.model.account.PageResponse;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +38,7 @@ public class AssetAccountServiceImpl extends BaseJmsService implements AssetAcco
         List<AssetAccount> allAccounts = new ArrayList<>();
         String requestUrl = ClientConstants.ASSET_ACCOUNT_PAGE;
         while (StringUtils.isNotBlank(requestUrl)) {
-            PageResponse<AssetAccount> pageResponse = get(PageResponse.class, requestUrl).execute();
+            PageResponse pageResponse = get(PageResponse.class, requestUrl).execute();
             allAccounts.addAll(pageResponse.getResults());
             requestUrl = pageResponse.getNext();
             if (StringUtils.isNotBlank(requestUrl) && requestUrl.contains(ClientConstants.BASE_URL)){

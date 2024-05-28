@@ -1,8 +1,11 @@
-package com.jumpserver.sdk.model.common;
+package com.jumpserver.sdk.model.account;
 
 import java.util.List;
 
-public class PageResponse<T> {
+/**
+ * @author liuhaohao
+ */
+public class PageResponse {
 
     private int count;
 
@@ -10,7 +13,7 @@ public class PageResponse<T> {
 
     private String previous;
 
-    private List<T> results;
+    private List<AssetAccount> results;
 
     public int getCount() {
         return count;
@@ -36,11 +39,11 @@ public class PageResponse<T> {
         this.previous = previous;
     }
 
-    public List<T> getResults() {
+    public List<AssetAccount> getResults() {
         return results;
     }
 
-    public void setResults(List<T> results) {
+    public void setResults(List<AssetAccount> results) {
         this.results = results;
     }
 }
