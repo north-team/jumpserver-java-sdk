@@ -8,6 +8,7 @@ import com.jumpserver.sdk.model.asset.v3.AssetRequest;
 import com.jumpserver.sdk.model.asset.v3.Asset;
 import com.jumpserver.sdk.model.asset.v3.DescribeAsset;
 import com.jumpserver.sdk.model.asset.v3.Platform;
+import com.jumpserver.sdk.model.permission.v3.AssetsPermission;
 
 import java.util.List;
 
@@ -45,5 +46,13 @@ public class AssertsV3ServiceImpl extends BaseJmsService implements AssertsV3Ser
     @Override
     public List<Platform> listPlatforms() {
         return get(Platform.class, ClientConstants.PLATFORM).executeList();
+    }
+
+    @Override
+    public List<AssetsPermission> getPermissionsWithAssets(String assetId,String orgId) {
+        checkNotNull(assetId);
+        return get(AssetsPermission.class, uri(ClientConstants.PERMISSION_WITH_ASSET, assetId))
+                .header(ClientConstants.X_JMS_ORG, orgId)
+                .executeList();
     }
 }

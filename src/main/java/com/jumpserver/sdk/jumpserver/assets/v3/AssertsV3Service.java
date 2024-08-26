@@ -5,6 +5,7 @@ import com.jumpserver.sdk.model.asset.v3.AssetRequest;
 import com.jumpserver.sdk.model.asset.v3.Asset;
 import com.jumpserver.sdk.model.asset.v3.DescribeAsset;
 import com.jumpserver.sdk.model.asset.v3.Platform;
+import com.jumpserver.sdk.model.permission.v3.AssetsPermission;
 
 import java.util.List;
 
@@ -22,4 +23,6 @@ public interface AssertsV3Service {
     ActionResponse delete(String assetId);
 
     List<Platform> listPlatforms();
+
+    List<AssetsPermission> getPermissionsWithAssets(String assetId,String orgId);
 }

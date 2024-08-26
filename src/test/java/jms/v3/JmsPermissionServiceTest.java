@@ -59,6 +59,15 @@ public class JmsPermissionServiceTest extends CommonBeforeTest {
         AssetsPermission object = os.permissionsV3().getAssetsPermission("16f05dd6-2083-499d-b74d-4cb8caf1038f");
         System.out.println(object.getName());
     }
+    @Test
+    public  void getPermissionsWithAssets() {
+        List<AssetsPermission> list = os.assetsV3().getPermissionsWithAssets("4f41c3b1-7523-4e42-b8c2-6e7fc9998553","3c4f5cc6-c729-408a-8c59-f019eec99f0a");
+        System.out.println(list.size());
+        for (AssetsPermission object : list) {
+            System.out.println(object.getId());
+            System.out.println(object.getName());
+        }
+    }
 
     @Test
     public void updateAssetsPermission() {
