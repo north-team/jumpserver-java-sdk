@@ -2,15 +2,20 @@ package com.jumpserver.sdk.common;
 
 import com.google.common.base.Joiner;
 import com.jumpserver.sdk.builder.JMSClientImpl;
+import com.jumpserver.sdk.common.eunms.PermissionExecInfoEnum;
+import com.jumpserver.sdk.exceptions.ClientResponseException;
 import com.jumpserver.sdk.exceptions.JmsException;
 import com.jumpserver.sdk.httpclient.executor.HttpExecutor;
 import com.jumpserver.sdk.httpclient.request.HttpRequest;
 import com.jumpserver.sdk.httpclient.response.HttpResponse;
 import com.jumpserver.sdk.model.common.ModelEntity;
+import org.apache.commons.lang.StringUtils;
 
+import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class BaseJmsService {
 
@@ -152,16 +157,27 @@ public class BaseJmsService {
         public R execute() {
             HttpRequest<R> request = req.build();
             HttpResponse res = HttpExecutor.create().execute(request);
+            // 处理 403 异常
+            handler403(request.getPath(), res);
             return res.getEntity(request.getReturnType());
         }
 
         public List<R> executeList() {
             HttpRequest<R> request = req.build();
             HttpResponse res = HttpExecutor.create().execute(request);
+            // 处理 403 异常
+            handler403(request.getPath(), res);
             if (res == null) {
                 return new ArrayList<>();
             }
             return res.getEntityList(request.getReturnType());
+        }
+
+        private void handler403(String requestPath, HttpResponse res) {
+            if (StringUtils.isEmpty(requestPath) || Objects.isNull(res) || HttpURLConnection.HTTP_FORBIDDEN != res.getStatus()) {
+                return;
+            }
+            throw new ClientResponseException(PermissionExecInfoEnum.getPermissionExecInfo(requestPath));
         }
 
     }

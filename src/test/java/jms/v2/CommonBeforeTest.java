@@ -3,6 +3,7 @@ package jms.v2;
 import com.jumpserver.sdk.builder.ClientBuilder;
 import com.jumpserver.sdk.builder.JMSClient;
 import com.jumpserver.sdk.common.ClientConstants;
+import com.jumpserver.sdk.common.eunms.PermissionExecInfoEnum;
 import org.apache.commons.lang.StringUtils;
 import org.junit.Before;
 
@@ -41,5 +42,10 @@ public class CommonBeforeTest {
         } else {
             os = credentials.header(ClientConstants.X_JMS_ORG, orgId).authenticate();
         }
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println(PermissionExecInfoEnum.getPermissionExecInfo(ClientConstants.ORG));
     }
 }
