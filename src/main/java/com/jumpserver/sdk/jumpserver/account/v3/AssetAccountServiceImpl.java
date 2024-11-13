@@ -35,7 +35,7 @@ public class AssetAccountServiceImpl extends BaseJmsService implements AssetAcco
 
     @Override
     public List<AssetAccount> list(String assetId) {
-        return get(AssetAccount.class, ClientConstants.ASSET_ACCOUNT , assetId, "/").executeList();
+        return get(AssetAccount.class, ClientConstants.ASSET_ACCOUNT+ "?asset_id=" + assetId).executeList();
     }
 
     @Override
