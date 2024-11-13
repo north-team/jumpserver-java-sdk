@@ -60,6 +60,12 @@ public class JmsAaccountServerTest extends CommonBeforeTest {
         System.out.println(JSONObject.toJSONString(asset));
     }
 
+    @Test
+    public void listAccountByAssetId() {
+        List<AssetAccount> asset = os.assetAccountV3().list("asset_id");
+        System.out.println(JSONObject.toJSONString(asset));
+    }
+
 
     @Test
     public void listAccountPage() {

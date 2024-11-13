@@ -14,6 +14,8 @@ public interface AssetAccountService {
 
     List<AssetAccount> list();
 
+    List<AssetAccount> list(String assetId);
+
     List<AssetAccount> listPage();
 
     AssetAccount create(AssetAccountRequest asset);
