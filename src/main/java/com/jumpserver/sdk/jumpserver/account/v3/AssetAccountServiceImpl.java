@@ -3,9 +3,9 @@ package com.jumpserver.sdk.jumpserver.account.v3;
 import com.alibaba.fastjson.JSON;
 import com.jumpserver.sdk.common.BaseJmsService;
 import com.jumpserver.sdk.common.ClientConstants;
+import com.jumpserver.sdk.model.account.AccountPageResponse;
 import com.jumpserver.sdk.model.account.AssetAccount;
 import com.jumpserver.sdk.model.account.AssetAccountRequest;
-import com.jumpserver.sdk.model.account.PageResponse;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +43,7 @@ public class AssetAccountServiceImpl extends BaseJmsService implements AssetAcco
         List<AssetAccount> allAccounts = new ArrayList<>();
         String requestUrl = ClientConstants.ASSET_ACCOUNT_PAGE;
         while (StringUtils.isNotBlank(requestUrl)) {
-            PageResponse pageResponse = get(PageResponse.class, requestUrl).execute();
+            AccountPageResponse pageResponse = get(AccountPageResponse.class, requestUrl).execute();
             allAccounts.addAll(pageResponse.getResults());
             requestUrl = pageResponse.getNext();
             if (StringUtils.isNotBlank(requestUrl) && requestUrl.contains(ClientConstants.BASE_URL)){

@@ -38,6 +38,8 @@ public final class ClientConstants {
     // nodes
     public static final String ASSETS = BASE_URL + "/assets/assets/";
     public static final String ASSETSV3 = BASE_URL + "/assets/hosts/";
+
+    public static final String ASSETSV3PAGES = BASE_URL + "/assets/hosts/?offset=0&limit=1000";
     public static final String PLATFORM = BASE_URL + "/assets/platforms/";
 
     //网域

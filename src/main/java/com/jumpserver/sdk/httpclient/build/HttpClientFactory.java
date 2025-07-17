@@ -71,6 +71,8 @@ public class HttpClientFactory {
         if (config.getReadTimeout() > 0) {
             rcb.setSocketTimeout(config.getReadTimeout());
         }
+        cb.setMaxConnTotal(20000);
+        cb.setMaxConnPerRoute(5000);
 
         return cb.setDefaultRequestConfig(rcb.build()).build();
     }
