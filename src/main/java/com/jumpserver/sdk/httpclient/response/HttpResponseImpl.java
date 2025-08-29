@@ -104,7 +104,9 @@ public class HttpResponseImpl implements HttpResponse {
         }
         try {
             checkNotNull(entity.getContent(), "Entity content is null.");
-            return JSON.parseArray(EntityUtils.toString(entity, "UTF-8"), typeToReadAs);
+            String string = EntityUtils.toString(entity, "UTF-8");
+
+            return JSON.parseArray(string, typeToReadAs);
         } catch (Exception e) {
             LOG.error(e.getMessage(), e);
             throw new ClientResponseException(e.getMessage());

@@ -2,6 +2,7 @@ package com.jumpserver.sdk.builder;
 
 import com.jumpserver.sdk.jumpserver.account.v3.AccountTemplateService;
 import com.jumpserver.sdk.jumpserver.account.v3.AssetAccountService;
+import com.jumpserver.sdk.jumpserver.account.v3.ChangeSecretAutomationService;
 import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsService;
 import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
@@ -64,6 +65,14 @@ public interface JMSClient {
      * @return
      */
     AssetAccountService assetAccountV3();
+
+    /**
+     * assets 账号改密
+     *
+     * @return
+     */
+    ChangeSecretAutomationService changeSecretAutomationV3();
+
 
     /**
      * luna 终端界面

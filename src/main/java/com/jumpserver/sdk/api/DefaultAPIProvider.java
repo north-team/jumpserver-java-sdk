@@ -1,10 +1,7 @@
 package com.jumpserver.sdk.api;
 
 import com.google.common.collect.Maps;
-import com.jumpserver.sdk.jumpserver.account.v3.AccountTemplateService;
-import com.jumpserver.sdk.jumpserver.account.v3.AccountTemplateServiceImpl;
-import com.jumpserver.sdk.jumpserver.account.v3.AssetAccountService;
-import com.jumpserver.sdk.jumpserver.account.v3.AssetAccountServiceImpl;
+import com.jumpserver.sdk.jumpserver.account.v3.*;
 import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
 import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3ServiceImpl;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsService;
@@ -47,6 +44,7 @@ public class DefaultAPIProvider implements APIProvider {
         bind(AssetAccountService.class, AssetAccountServiceImpl.class);
         bind(LunaV3Service.class, LunaV3ServiceImpl.class);
         bind(AccountTemplateService.class, AccountTemplateServiceImpl.class);
+        bind(ChangeSecretAutomationService.class, ChangeSecretAutomationServiceImpl.class);
     }
 
     @SuppressWarnings("unchecked")
