@@ -5,12 +5,14 @@ import com.jumpserver.sdk.common.BaseJmsService;
 import com.jumpserver.sdk.common.ClientConstants;
 import com.jumpserver.sdk.model.account.AssetAccount;
 import com.jumpserver.sdk.model.account.AssetAccountRequest;
+import com.jumpserver.sdk.model.account.ChangeSecretAutomations;
 import com.jumpserver.sdk.model.account.PageResponse;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static com.google.common.base.Preconditions.checkNotNull;

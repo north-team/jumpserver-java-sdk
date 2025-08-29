@@ -40,15 +40,6 @@ public class JmsOrgServiceTest extends CommonBeforeTest{
         System.out.println(objectBack.getName());
     }
 
-    @Test
-    public void Org() {
-        List<Org> list = os.orgs().listOrg();
-        System.out.println(list.size());
-        for (Org object : list) {
-            System.out.println(object.getId());
-            System.out.println(object.getName());
-        }
-    }
 
 
     @Test
