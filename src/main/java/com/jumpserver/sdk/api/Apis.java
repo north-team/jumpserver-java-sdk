@@ -2,6 +2,7 @@ package com.jumpserver.sdk.api;
 
 import com.jumpserver.sdk.jumpserver.account.v3.AccountTemplateService;
 import com.jumpserver.sdk.jumpserver.account.v3.AssetAccountService;
+import com.jumpserver.sdk.jumpserver.account.v3.ChangeSecretAutomationsService;
 import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsService;
 import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
@@ -60,9 +61,15 @@ public class Apis {
     public static AccountTemplateService getAccountTemplateServices() {
         return get(AccountTemplateService.class);
     }
+
     public static AssetAccountService getAssetAccountServices() {
         return get(AssetAccountService.class);
     }
+
+    public static ChangeSecretAutomationsService getChangeSecretAutomationsServices() {
+        return get(ChangeSecretAutomationsService.class);
+    }
+
 
     private static APIProvider initializeProvider() {
         DefaultAPIProvider p = new DefaultAPIProvider();

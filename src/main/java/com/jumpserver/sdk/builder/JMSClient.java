@@ -2,6 +2,7 @@ package com.jumpserver.sdk.builder;
 
 import com.jumpserver.sdk.jumpserver.account.v3.AccountTemplateService;
 import com.jumpserver.sdk.jumpserver.account.v3.AssetAccountService;
+import com.jumpserver.sdk.jumpserver.account.v3.ChangeSecretAutomationsService;
 import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsService;
 import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
@@ -12,6 +13,7 @@ import com.jumpserver.sdk.jumpserver.permissions.v2.PermissionService;
 import com.jumpserver.sdk.jumpserver.permissions.v3.PermissionV3Service;
 import com.jumpserver.sdk.jumpserver.role.v3.RoleService;
 import com.jumpserver.sdk.jumpserver.users.UserService;
+import com.jumpserver.sdk.model.account.ChangeSecretAutomations;
 
 import java.util.Map;
 
@@ -64,6 +66,14 @@ public interface JMSClient {
      * @return
      */
     AssetAccountService assetAccountV3();
+
+    /**
+     * assets 账号改密
+     *
+     * @return
+     */
+    ChangeSecretAutomationsService changeSecretAutomationsV3();
+
 
     /**
      * luna 终端界面
