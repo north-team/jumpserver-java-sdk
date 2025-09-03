@@ -3,7 +3,6 @@ package com.jumpserver.sdk.jumpserver.account.v3;
 import com.alibaba.fastjson.JSON;
 import com.jumpserver.sdk.common.BaseJmsService;
 import com.jumpserver.sdk.common.ClientConstants;
-import com.jumpserver.sdk.model.account.AssetAccount;
 import com.jumpserver.sdk.model.account.ChangeSecretAutomation;
 import com.jumpserver.sdk.model.account.ChangeSecretAutomationRequest;
 
@@ -21,16 +20,19 @@ public class ChangeSecretAutomationServiceImpl extends BaseJmsService  implement
     @Override
     public ChangeSecretAutomation create(ChangeSecretAutomationRequest changeSecretAutomationsRequest) {
         checkNotNull(changeSecretAutomationsRequest);
-        return post(AssetAccount.class, ClientConstants.CHANGE_SECRET_AUTOMATIONS).json(JSON.toJSONString(asset)).execute();
+        return post(ChangeSecretAutomation.class, ClientConstants.CHANGE_SECRET_AUTOMATIONS).json(JSON.toJSONString(changeSecretAutomationsRequest)).execute();
     }
 
     @Override
     public ChangeSecretAutomation update(ChangeSecretAutomationRequest changeSecretAutomationsRequest) {
-        return null;
+        checkNotNull(changeSecretAutomationsRequest);
+        return patch(ChangeSecretAutomation.class, ClientConstants.CHANGE_SECRET_AUTOMATIONS).json(JSON.toJSONString(changeSecretAutomationsRequest)).execute();
+
     }
 
     @Override
     public void delete(String changeSecretAutomationsId) {
-
+        checkNotNull(changeSecretAutomationsId);
+        delete(null, ClientConstants.CHANGE_SECRET_AUTOMATIONS, changeSecretAutomationsId, "/").execute();
     }
 }

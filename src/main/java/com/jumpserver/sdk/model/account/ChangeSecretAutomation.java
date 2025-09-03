@@ -32,9 +32,6 @@ public class ChangeSecretAutomation extends BaseChangeSecretAutomation {
     public String dateUpdated;
 
 
-    @JSONField(name = "accounts")
-    public List<String> accounts;
-
     @JSONField(name = "nodes")
     public List<?> nodes;
 
@@ -106,13 +103,6 @@ public class ChangeSecretAutomation extends BaseChangeSecretAutomation {
         this.dateUpdated = dateUpdated;
     }
 
-    public List<String> getAccounts() {
-        return accounts;
-    }
-
-    public void setAccounts(List<String> accounts) {
-        this.accounts = accounts;
-    }
 
     public List<?> getNodes() {
         return nodes;
@@ -129,4 +119,5 @@ public class ChangeSecretAutomation extends BaseChangeSecretAutomation {
     public void setAssets(List<?> assets) {
         this.assets = assets;
     }
+
 }
