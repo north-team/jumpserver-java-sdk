@@ -2,7 +2,7 @@ package com.jumpserver.sdk.builder;
 
 import com.jumpserver.sdk.jumpserver.account.v3.AccountTemplateService;
 import com.jumpserver.sdk.jumpserver.account.v3.AssetAccountService;
-import com.jumpserver.sdk.jumpserver.account.v3.ChangeSecretAutomationsService;
+import com.jumpserver.sdk.jumpserver.account.v3.ChangeSecretAutomationService;
 import com.jumpserver.sdk.jumpserver.assetnode.v3.AssetNodeV3Service;
 import com.jumpserver.sdk.jumpserver.assets.v2.AssertsService;
 import com.jumpserver.sdk.jumpserver.assets.v3.AssertsV3Service;
@@ -72,7 +72,7 @@ public interface JMSClient {
      *
      * @return
      */
-    ChangeSecretAutomationsService changeSecretAutomationsV3();
+    ChangeSecretAutomationService changeSecretAutomationV3();
 
 
     /**
