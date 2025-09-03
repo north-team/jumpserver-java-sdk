@@ -36,6 +36,10 @@ public abstract class BaseChangeSecretAutomation {
     @JSONField(name = "recipients")
     protected List<?> recipients;
 
+    @JSONField(name = "accounts")
+    public List<String> accounts;
+
+
     @JSONField(name = "params")
     protected ParamsDTO params;
 
@@ -183,56 +187,112 @@ public abstract class BaseChangeSecretAutomation {
         /* 按需补充 */
     }
 
-    public static class AccountsDTO {
-        /* 按需补充 */
+    public String getId() {
+        return id;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getInterval() {
+        return interval;
     }
 
     public void setInterval(Integer interval) {
         this.interval = interval;
     }
 
+    public Object getCrontab() {
+        return crontab;
+    }
+
     public void setCrontab(Object crontab) {
         this.crontab = crontab;
+    }
+
+    public String getComment() {
+        return comment;
     }
 
     public void setComment(String comment) {
         this.comment = comment;
     }
 
+    public SecretTypeDTO getSecretType() {
+        return secretType;
+    }
+
     public void setSecretType(SecretTypeDTO secretType) {
         this.secretType = secretType;
+    }
+
+    public SecretStrategyDTO getSecretStrategy() {
+        return secretStrategy;
     }
 
     public void setSecretStrategy(SecretStrategyDTO secretStrategy) {
         this.secretStrategy = secretStrategy;
     }
 
+    public PasswordRulesDTO getPasswordRules() {
+        return passwordRules;
+    }
+
     public void setPasswordRules(PasswordRulesDTO passwordRules) {
         this.passwordRules = passwordRules;
+    }
+
+    public SshKeyChangeStrategyDTO getSshKeyChangeStrategy() {
+        return sshKeyChangeStrategy;
     }
 
     public void setSshKeyChangeStrategy(SshKeyChangeStrategyDTO sshKeyChangeStrategy) {
         this.sshKeyChangeStrategy = sshKeyChangeStrategy;
     }
 
+    public List<?> getRecipients() {
+        return recipients;
+    }
+
     public void setRecipients(List<?> recipients) {
         this.recipients = recipients;
+    }
+
+    public List<String> getAccounts() {
+        return accounts;
+    }
+
+    public void setAccounts(List<String> accounts) {
+        this.accounts = accounts;
+    }
+
+    public ParamsDTO getParams() {
+        return params;
     }
 
     public void setParams(ParamsDTO params) {
         this.params = params;
     }
 
+    public Boolean getPeriodic() {
+        return isPeriodic;
+    }
+
     public void setPeriodic(Boolean periodic) {
         isPeriodic = periodic;
+    }
+
+    public Boolean getActive() {
+        return isActive;
     }
 
     public void setActive(Boolean active) {

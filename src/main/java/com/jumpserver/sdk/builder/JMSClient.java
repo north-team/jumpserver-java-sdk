@@ -13,7 +13,6 @@ import com.jumpserver.sdk.jumpserver.permissions.v2.PermissionService;
 import com.jumpserver.sdk.jumpserver.permissions.v3.PermissionV3Service;
 import com.jumpserver.sdk.jumpserver.role.v3.RoleService;
 import com.jumpserver.sdk.jumpserver.users.UserService;
-import com.jumpserver.sdk.model.account.ChangeSecretAutomations;
 
 import java.util.Map;
 
