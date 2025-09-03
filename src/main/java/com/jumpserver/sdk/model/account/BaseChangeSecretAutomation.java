@@ -1,67 +1,57 @@
 package com.jumpserver.sdk.model.account;
 
 import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.List;
 
 
-public class ChangeSecretAutomations {
+public abstract class BaseChangeSecretAutomation {
 
-    @JSONField(name = "created_by")
-    private String createdBy;
-    @JSONField(name = "periodic_display")
-    private String periodicDisplay;
-    @JSONField(name = "executed_amount")
-    private Integer executedAmount;
     @JSONField(name = "id")
-    private String id;
+    protected String id;
+
     @JSONField(name = "name")
-    private String name;
+    protected String name;
+
     @JSONField(name = "interval")
-    private Integer interval;
+    protected Integer interval;
+
     @JSONField(name = "crontab")
-    private Object crontab;
+    protected Object crontab;
+
     @JSONField(name = "comment")
-    private String comment;
-    @JSONField(name = "type")
-    private String type;
-    @JSONField(name = "accounts")
-    private List<String> accounts;
-    @JSONField(name = "nodes")
-    private List<?> nodes;
-    @JSONField(name = "assets")
-    private List<?> assets;
+    protected String comment;
+
     @JSONField(name = "secret_type")
-    private SecretTypeDTO secretType;
+    protected SecretTypeDTO secretType;
+
     @JSONField(name = "secret_strategy")
-    private SecretStrategyDTO secretStrategy;
+    protected SecretStrategyDTO secretStrategy;
+
     @JSONField(name = "password_rules")
-    private PasswordRulesDTO passwordRules;
+    protected PasswordRulesDTO passwordRules;
+
     @JSONField(name = "ssh_key_change_strategy")
-    private SshKeyChangeStrategyDTO sshKeyChangeStrategy;
+    protected SshKeyChangeStrategyDTO sshKeyChangeStrategy;
+
     @JSONField(name = "recipients")
-    private List<?> recipients;
+    protected List<?> recipients;
+
     @JSONField(name = "params")
-    private ParamsDTO params;
-    @JSONField(name = "org_id")
-    private String orgId;
-    @JSONField(name = "org_name")
-    private String orgName;
+    protected ParamsDTO params;
+
     @JSONField(name = "is_periodic")
-    private Boolean isPeriodic;
+    protected Boolean isPeriodic;
+
     @JSONField(name = "is_active")
-    private Boolean isActive;
-    @JSONField(name = "date_created")
-    private String dateCreated;
-    @JSONField(name = "date_updated")
-    private String dateUpdated;
+    protected Boolean isActive;
+
 
 
     public static class SecretTypeDTO {
         @JSONField(name = "value")
-        private String value;
+        public String value;
         @JSONField(name = "label")
-        private String label;
+        public String label;
 
         public String getValue() {
             return value;
@@ -80,12 +70,11 @@ public class ChangeSecretAutomations {
         }
     }
 
-
     public static class SecretStrategyDTO {
         @JSONField(name = "value")
-        private String value;
+        public String value;
         @JSONField(name = "label")
-        private String label;
+        public String label;
 
         public String getValue() {
             return value;
@@ -106,17 +95,17 @@ public class ChangeSecretAutomations {
 
     public static class PasswordRulesDTO {
         @JSONField(name = "length")
-        private Integer length;
+        public Integer length;
         @JSONField(name = "lowercase")
-        private Boolean lowercase;
+        public Boolean lowercase;
         @JSONField(name = "uppercase")
-        private Boolean uppercase;
+        public Boolean uppercase;
         @JSONField(name = "digit")
-        private Boolean digit;
+        public Boolean digit;
         @JSONField(name = "symbol")
-        private Boolean symbol;
+        public Boolean symbol;
         @JSONField(name = "exclude_symbols")
-        private String excludeSymbols;
+        public String excludeSymbols;
 
         public Integer getLength() {
             return length;
@@ -167,12 +156,11 @@ public class ChangeSecretAutomations {
         }
     }
 
-
     public static class SshKeyChangeStrategyDTO {
         @JSONField(name = "value")
-        private String value;
+        public String value;
         @JSONField(name = "label")
-        private String label;
+        public String label;
 
         public String getValue() {
             return value;
@@ -191,199 +179,63 @@ public class ChangeSecretAutomations {
         }
     }
 
-
     public static class ParamsDTO {
+        /* 按需补充 */
     }
 
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public String getPeriodicDisplay() {
-        return periodicDisplay;
-    }
-
-    public void setPeriodicDisplay(String periodicDisplay) {
-        this.periodicDisplay = periodicDisplay;
-    }
-
-    public Integer getExecutedAmount() {
-        return executedAmount;
-    }
-
-    public void setExecutedAmount(Integer executedAmount) {
-        this.executedAmount = executedAmount;
-    }
-
-    public String getId() {
-        return id;
+    public static class AccountsDTO {
+        /* 按需补充 */
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Integer getInterval() {
-        return interval;
     }
 
     public void setInterval(Integer interval) {
         this.interval = interval;
     }
 
-    public Object getCrontab() {
-        return crontab;
-    }
-
     public void setCrontab(Object crontab) {
         this.crontab = crontab;
-    }
-
-    public String getComment() {
-        return comment;
     }
 
     public void setComment(String comment) {
         this.comment = comment;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public List<String> getAccounts() {
-        return accounts;
-    }
-
-    public void setAccounts(List<String> accounts) {
-        this.accounts = accounts;
-    }
-
-    public List<?> getNodes() {
-        return nodes;
-    }
-
-    public void setNodes(List<?> nodes) {
-        this.nodes = nodes;
-    }
-
-    public List<?> getAssets() {
-        return assets;
-    }
-
-    public void setAssets(List<?> assets) {
-        this.assets = assets;
-    }
-
-    public SecretTypeDTO getSecretType() {
-        return secretType;
-    }
-
     public void setSecretType(SecretTypeDTO secretType) {
         this.secretType = secretType;
-    }
-
-    public SecretStrategyDTO getSecretStrategy() {
-        return secretStrategy;
     }
 
     public void setSecretStrategy(SecretStrategyDTO secretStrategy) {
         this.secretStrategy = secretStrategy;
     }
 
-    public PasswordRulesDTO getPasswordRules() {
-        return passwordRules;
-    }
-
     public void setPasswordRules(PasswordRulesDTO passwordRules) {
         this.passwordRules = passwordRules;
-    }
-
-    public SshKeyChangeStrategyDTO getSshKeyChangeStrategy() {
-        return sshKeyChangeStrategy;
     }
 
     public void setSshKeyChangeStrategy(SshKeyChangeStrategyDTO sshKeyChangeStrategy) {
         this.sshKeyChangeStrategy = sshKeyChangeStrategy;
     }
 
-    public List<?> getRecipients() {
-        return recipients;
-    }
-
     public void setRecipients(List<?> recipients) {
         this.recipients = recipients;
-    }
-
-    public ParamsDTO getParams() {
-        return params;
     }
 
     public void setParams(ParamsDTO params) {
         this.params = params;
     }
 
-    public String getOrgId() {
-        return orgId;
-    }
-
-    public void setOrgId(String orgId) {
-        this.orgId = orgId;
-    }
-
-    public String getOrgName() {
-        return orgName;
-    }
-
-    public void setOrgName(String orgName) {
-        this.orgName = orgName;
-    }
-
-    public Boolean getPeriodic() {
-        return isPeriodic;
-    }
-
     public void setPeriodic(Boolean periodic) {
         isPeriodic = periodic;
     }
 
-    public Boolean getActive() {
-        return isActive;
-    }
-
     public void setActive(Boolean active) {
         isActive = active;
-    }
-
-    public String getDateCreated() {
-        return dateCreated;
-    }
-
-    public void setDateCreated(String dateCreated) {
-        this.dateCreated = dateCreated;
-    }
-
-    public String getDateUpdated() {
-        return dateUpdated;
-    }
-
-    public void setDateUpdated(String dateUpdated) {
-        this.dateUpdated = dateUpdated;
     }
 }

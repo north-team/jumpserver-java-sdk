@@ -44,7 +44,7 @@ public class DefaultAPIProvider implements APIProvider {
         bind(AssetAccountService.class, AssetAccountServiceImpl.class);
         bind(LunaV3Service.class, LunaV3ServiceImpl.class);
         bind(AccountTemplateService.class, AccountTemplateServiceImpl.class);
-        bind(ChangeSecretAutomationsService.class, ChangeSecretAutomationsServiceImpl.class);
+        bind(ChangeSecretAutomationService.class, ChangeSecretAutomationServiceImpl.class);
     }
 
     @SuppressWarnings("unchecked")

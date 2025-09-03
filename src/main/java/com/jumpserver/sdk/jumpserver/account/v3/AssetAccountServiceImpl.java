@@ -5,7 +5,7 @@ import com.jumpserver.sdk.common.BaseJmsService;
 import com.jumpserver.sdk.common.ClientConstants;
 import com.jumpserver.sdk.model.account.AssetAccount;
 import com.jumpserver.sdk.model.account.AssetAccountRequest;
-import com.jumpserver.sdk.model.account.ChangeSecretAutomations;
+import com.jumpserver.sdk.model.account.ChangeSecretAutomation;
 import com.jumpserver.sdk.model.account.PageResponse;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
