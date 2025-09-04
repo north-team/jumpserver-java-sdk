@@ -2,8 +2,6 @@ package com.jumpserver.sdk.jumpserver.account.v3;
 
 import com.jumpserver.sdk.model.account.AssetAccount;
 import com.jumpserver.sdk.model.account.AssetAccountRequest;
-import com.jumpserver.sdk.model.account.ChangeSecretAutomations;
-import com.jumpserver.sdk.model.account.ChangeSecretAutomationsRequest;
 
 import java.util.List;
 

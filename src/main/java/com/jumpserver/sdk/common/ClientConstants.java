@@ -34,6 +34,7 @@ public final class ClientConstants {
 
 
     public static final String CHANGE_SECRET_AUTOMATIONS = BASE_URL + "/accounts/change-secret-automations/";
+    public static final String CHANGE_SECRET_AUTOMATIONS_DETAIL = BASE_URL + "/accounts/change-secret-automations/{id}/";
 
     //account-templates
     public static final String ACCOUNT_TEMPLATE = BASE_URL + "/accounts/account-templates/";
