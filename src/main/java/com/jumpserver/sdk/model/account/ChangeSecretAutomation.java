@@ -1,6 +1,7 @@
 package com.jumpserver.sdk.model.account;
 
 import com.alibaba.fastjson.annotation.JSONField;
+
 import java.util.List;
 
 
@@ -36,8 +37,31 @@ public class ChangeSecretAutomation extends BaseChangeSecretAutomation {
     public List<?> nodes;
 
     @JSONField(name = "assets")
-    public List<?> assets;
+    public List<AssetDTO> assets;
 
+    public static class AssetDTO {
+
+        @JSONField(name = "name")
+        private String name;
+        @JSONField(name = "id")
+        private String id;
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+    }
 
     public String getCreatedBy() {
         return createdBy;
@@ -112,12 +136,11 @@ public class ChangeSecretAutomation extends BaseChangeSecretAutomation {
         this.nodes = nodes;
     }
 
-    public List<?> getAssets() {
+    public List<AssetDTO> getAssets() {
         return assets;
     }
 
-    public void setAssets(List<?> assets) {
+    public void setAssets(List<AssetDTO> assets) {
         this.assets = assets;
     }
-
 }

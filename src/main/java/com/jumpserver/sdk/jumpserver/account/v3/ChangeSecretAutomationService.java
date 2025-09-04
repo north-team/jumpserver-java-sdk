@@ -11,8 +11,14 @@ public interface ChangeSecretAutomationService {
 
     ChangeSecretAutomation create(ChangeSecretAutomationRequest changeSecretAutomationsRequest);
 
+    ChangeSecretAutomation get(String changeSecretAutomationsId);
+
     ChangeSecretAutomation update(ChangeSecretAutomationRequest changeSecretAutomationsRequest);
 
     void delete(String changeSecretAutomationsId);
+
+    void addAsset(String changeSecretAutomationsId, List<String> assetIds);
+
+    void removeAsset(String changeSecretAutomationsId, List<String> assetIds);
 
 }
