@@ -5,7 +5,6 @@ import com.jumpserver.sdk.common.BaseJmsService;
 import com.jumpserver.sdk.common.ClientConstants;
 import com.jumpserver.sdk.model.account.ChangeSecretAutomation;
 import com.jumpserver.sdk.model.account.ChangeSecretAutomationRequest;
-import org.apache.commons.collections.CollectionUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
