@@ -18,9 +18,9 @@ public class ChangeSecretAutomationRequest {
     @JSONField(name = "accounts")
     private List<String> accounts;
     @JSONField(name = "assets")
-    private List<?> assets;
+    private List<String> assets;
     @JSONField(name = "nodes")
-    private List<?> nodes;
+    private List<String> nodes;
     @JSONField(name = "secret_strategy")
     private String secretStrategy;
     @JSONField(name = "secret_type")
@@ -64,15 +64,15 @@ public class ChangeSecretAutomationRequest {
         return assets;
     }
 
-    public void setAssets(List<?> assets) {
+    public void setAssets(List<String> assets) {
         this.assets = assets;
     }
 
-    public List<?> getNodes() {
+    public List<String> getNodes() {
         return nodes;
     }
 
-    public void setNodes(List<?> nodes) {
+    public void setNodes(List<String> nodes) {
         this.nodes = nodes;
     }
 
