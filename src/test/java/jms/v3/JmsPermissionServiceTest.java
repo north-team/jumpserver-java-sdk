@@ -115,6 +115,16 @@ public class JmsPermissionServiceTest extends CommonBeforeTest {
     }
 
     @Test
+    public void assetsPermissionWithPage() {
+        List<AssetsPermission> list = os.permissionsV3().listPage();
+        System.out.println(list.size());
+        for (AssetsPermission object : list) {
+            System.out.println(object.getId());
+            System.out.println(object.getName());
+        }
+    }
+
+    @Test
     public void removePermissionAsset() {
         String permissionId = "7bf91adc-21f7-4d65-a729-210821b40fef";
 //        String userId = "f0a96c87-80b1-45da-8b18-9132c985e576";

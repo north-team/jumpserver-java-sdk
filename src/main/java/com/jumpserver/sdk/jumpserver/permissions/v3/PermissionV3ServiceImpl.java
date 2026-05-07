@@ -8,7 +8,12 @@ import com.jumpserver.sdk.common.BaseJmsService;
 import com.jumpserver.sdk.common.ClientConstants;
 import com.jumpserver.sdk.jumpserver.permissions.v3.Request.AssetsPermissionRequest;
 import com.jumpserver.sdk.model.permission.v3.AssetsPermission;
+import com.jumpserver.sdk.model.permission.v3.AssetsPermissionPageResponse;
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -18,9 +23,32 @@ import static com.google.common.base.Preconditions.checkNotNull;
  * @date 2018/10/16 上午10:34
  */
 public class PermissionV3ServiceImpl extends BaseJmsService implements PermissionV3Service {
+    private static final int MAX_PAGE_SIZE = 1000;
+    private static Logger logger = LoggerFactory.getLogger(PermissionV3ServiceImpl.class);
+
     @Override
     public List<AssetsPermission> list() {
         return get(AssetsPermission.class, uri(ClientConstants.ASSET_PERMISSIONS)).executeList();
+    }
+
+    @Override
+    public List<AssetsPermission> listPage() {
+        List<AssetsPermission> permissions = new ArrayList<AssetsPermission>();
+        String requestUrl = ClientConstants.ASSET_PERMISSIONS + "?offset=0&limit=" + MAX_PAGE_SIZE;
+        while (StringUtils.isNotBlank(requestUrl)) {
+            AssetsPermissionPageResponse pageResponse = get(AssetsPermissionPageResponse.class, requestUrl).execute();
+            permissions.addAll(pageResponse.getResults());
+            requestUrl = pageResponse.getNext();
+            if (StringUtils.isBlank(requestUrl)) {
+                requestUrl = null;
+            } else if (requestUrl.contains(ClientConstants.BASE_URL)) {
+                requestUrl = requestUrl.substring(requestUrl.indexOf(ClientConstants.BASE_URL), requestUrl.length());
+            } else {
+                logger.warn("异常的 JumpServer 返回地址：{}", requestUrl);
+                requestUrl = null;
+            }
+        }
+        return permissions;
     }
 
     @Override

@@ -13,6 +13,7 @@ import java.util.List;
 public interface PermissionV3Service {
 
     List<AssetsPermission> list();
+    List<AssetsPermission> listPage();
 
     AssetsPermission getAssetsPermission(String permissionId);
 
