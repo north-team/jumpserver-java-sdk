@@ -25,6 +25,8 @@ public class ChangeSecretAutomationRequest {
     private String secretStrategy;
     @JSONField(name = "secret_type")
     private String secretType;
+    @JSONField(name = "secret")
+    private String secret;
     @JSONField(name = "password_rules")
     private PasswordRulesDTO passwordRules;
     @JSONField(name = "ssh_key_change_strategy")
@@ -90,6 +92,14 @@ public class ChangeSecretAutomationRequest {
 
     public void setSecretType(String secretType) {
         this.secretType = secretType;
+    }
+
+    public String getSecret() {
+        return secret;
+    }
+
+    public void setSecret(String secret) {
+        this.secret = secret;
     }
 
     public PasswordRulesDTO getPasswordRules() {
